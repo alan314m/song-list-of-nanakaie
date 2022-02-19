@@ -15,6 +15,8 @@
 一直用的npm, 不确定yarn是否还好使。跑开发服务器使用如下指令：
 
 ```bash
+npm install
+
 npm run dev
 # or
 yarn dev
