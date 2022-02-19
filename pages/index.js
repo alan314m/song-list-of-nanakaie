@@ -163,7 +163,7 @@ export default function Home() {
         </section>
 
         <footer className={styles.footer}>
-          Copyright © 2022 版权啥的没所谓啦
+          Copyright © 2022 七宝和她的家人们
         </footer>
       </Container>
     </div>
