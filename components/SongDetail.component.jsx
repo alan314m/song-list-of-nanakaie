@@ -9,7 +9,8 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
         onClick={(e) => handleClickToCopy(e.target.parentNode.firstChild.innerText)}
       >
         <td className={styles.noWrapForce}>{song.song_name}</td>
-        <td className={styles.noWrapForce}>{song.artist}</td>
+        {/** 等歌手补充 */}
+        {/** <td className={styles.noWrapForce}>{song.artist}</td> */}
         <td className={styles.noWrapForce}>{song.language}</td>
         <td className={styles.noWrapForce}>{song.remarks}</td>
       </tr>

@@ -58,7 +58,7 @@ export default function Home() {
       <Container>
         <Head>
           <title>七禾いえ的歌单</title>
-          <meta
+          <meta 
             name="keywords"
             content="七禾いえ,B站,bilibili,哔哩哔哩,电台唱见,歌单"
           />
@@ -94,31 +94,31 @@ export default function Home() {
                 onChange={(e) => setFilterSongInitialSelect(e.target.value)}
               >
                 <option value="">按拼音首字母或语言过滤</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                <option value="G">G</option>
-                <option value="H">H</option>
-                <option value="I">I</option>
-                <option value="J">J</option>
-                <option value="K">K</option>
-                <option value="L">L</option>
-                <option value="M">M</option>
-                <option value="N">N</option>
-                <option value="O">O</option>
-                <option value="P">P</option>
-                <option value="Q">Q</option>
-                <option value="R">R</option>
-                <option value="S">S</option>
-                <option value="T">T</option>
-                <option value="U">U</option>
-                <option value="W">W</option>
-                <option value="X">X</option>
-                <option value="Y">Y</option>
-                <option value="Z">Z</option>
+                <option value="A">国语-A</option>
+                <option value="B">国语-B</option>
+                <option value="C">国语-C</option>
+                <option value="D">国语-D</option>
+                <option value="E">国语-E</option>
+                <option value="F">国语-F</option>
+                <option value="G">国语-G</option>
+                <option value="H">国语-H</option>
+                <option value="I">国语-I</option>
+                <option value="J">国语-J</option>
+                <option value="K">国语-K</option>
+                <option value="L">国语-L</option>
+                <option value="M">国语-M</option>
+                <option value="N">国语-N</option>
+                <option value="O">国语-O</option>
+                <option value="P">国语-P</option>
+                <option value="Q">国语-Q</option>
+                <option value="R">国语-R</option>
+                <option value="S">国语-S</option>
+                <option value="T">国语-T</option>
+                <option value="U">国语-U</option>
+                <option value="W">国语-W</option>
+                <option value="X">国语-X</option>
+                <option value="Y">国语-Y</option>
+                <option value="Z">国语-Z</option>
                 <option value="粤语">粤语</option>
                 <option value="日语">日语</option>
                 <option value="韩语">韩语</option>
@@ -144,7 +144,8 @@ export default function Home() {
                     <thead>
                       <tr>
                         <th>歌名</th>
-                        <th>歌手</th>
+                        {/** 等歌手补充 */}
+                        {/** <th>歌手</th> */}
                         <th>语言</th>
                         <th>备注</th>
                       </tr>
