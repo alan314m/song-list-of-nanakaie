@@ -35,7 +35,7 @@
 }
 
 .songListMarco {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
   margin: 1rem 0 2rem;
 }
@@ -44,7 +44,7 @@
   white-space: nowrap !important;
 }
 
-.avatarDiv {
+.centerFlexDiv {
   display: flex;
   justify-content: space-evenly;
 }
@@ -59,22 +59,43 @@
 }
 
 .songRow:hover {
-  background-color: #D7C2F9;
+  background-color: #d7c2f9;
 }
 
 .filters {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 1rem;
 }
 
 .filters:focus {
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: none;
+}
+
+.customRapButton {
+  color: #575065;
+  border-radius: 1rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.customRapButton:focus {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.customRapButton:hover {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {
   .filters {
-      margin-top: 12px;
+    margin-top: 12px;
+  }
+  .customRapButton {
+    margin-top: 12px;
   }
 }

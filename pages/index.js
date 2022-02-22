@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 import Head from "next/head";
+import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Container, Row, Col, Form, Table } from "react-bootstrap";
+import { Container, Row, Col, Form, Table, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
@@ -17,6 +18,7 @@ export default function Home() {
   //状态保存: 下拉选单和搜索框
   const [filterSongInitialSelect, setFilterSongInitialSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
+  const [rapOnlyToggle, setRapOnlyToggle] = useState(false);
 
   //复制成功用户反馈Toast
   const notify = (song_name) =>
@@ -31,14 +33,18 @@ export default function Home() {
         : true) &&
       //搜索框搜歌名
       (song.song_name
-        .toString()
+        ?.toString()
         .toLowerCase()
         .includes(searchBox ? searchBox.toLowerCase() : "") ||
         //搜索框搜语言
         song.language
-          .toString()
+          ?.toString()
           .toLowerCase()
           .includes(searchBox ? searchBox.toLowerCase() : ""))
+  );
+
+  const filteredSongListAfterToggle = filteredSongList.filter((song) =>
+    rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true
   );
 
   //处理用户复制行为
@@ -49,16 +55,12 @@ export default function Home() {
     notify(songName);
   };
 
-  const avatarLoader = () => {
-    return `/nanakaie.webp`
-  }
-  
   return (
     <div className={styles.outerContainer}>
       <Container>
         <Head>
           <title>七禾いえ的歌单</title>
-          <meta 
+          <meta
             name="keywords"
             content="七禾いえ,B站,bilibili,哔哩哔哩,电台唱见,歌单"
           />
@@ -70,7 +72,7 @@ export default function Home() {
           {/** 头像和标题 */}
           <Row>
             <Col>
-              <div className={styles.avatarDiv}>
+              <div className={styles.centerFlexDiv}>
                 <img
                   className={"pt-3 " + styles.avatar}
                   src="./nanakaie.webp"
@@ -80,6 +82,30 @@ export default function Home() {
               <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
                 七禾いえ的歌单
               </h1>
+              <div className={styles.centerFlexDiv}>
+                <Link href="https://live.bilibili.com/23777594" passHref>
+                  <a target="_blank">
+                    <Button
+                      className={"mt-3 " + styles.customRapButton}
+                    >
+                      <img src="bilibili_logo.png" alt="bilibili logo" style={{ width: "20px", paddingBottom: "2px" }}/>{" "}前往七宝的直播间{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        className="bi bi-chevron-right"
+                        viewBox="0 0 16 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </Button>
+                  </a>
+                </Link>
+              </div>
               <p className={"text-center py-3 text-muted"}>
                 可以点击歌名复制哦
               </p>
@@ -125,7 +151,18 @@ export default function Home() {
                 <option value="英语">英语</option>
               </Form.Select>
             </Col>
-            <Col sm={12} md={6}>
+            <Col xs={6} md={3}>
+              <div className="d-grid">
+                <Button
+                  className={styles.customRapButton}
+                  onClick={(e) => setRapOnlyToggle(!rapOnlyToggle)}
+                  style={rapOnlyToggle ? { backgroundColor: "#fff" } : {}}
+                >
+                  我要听七宝唱Rap!
+                </Button>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
               <Form.Control
                 className={styles.filters}
                 type="search"
@@ -152,7 +189,7 @@ export default function Home() {
                     </thead>
                     <tbody>
                       <SongDetail
-                        filteredSongList={filteredSongList}
+                        filteredSongList={filteredSongListAfterToggle}
                         handleClickToCopy={handleClickToCopy}
                       />
                     </tbody>
