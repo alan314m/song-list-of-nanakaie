@@ -62,6 +62,16 @@
   background-color: #d7c2f9;
 }
 
+.songRowTop {
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  background-color: rgba(229, 106, 84, 0.1);
+}
+
+.songRowTop:hover {
+  background-color: #d7c2f9;
+}
+
 .filters {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
@@ -89,6 +99,10 @@
 .customRapButton:hover {
   color: #575065;
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.upArrow {
+  width: 16px;
 }
 
 @media (max-width: 768px) {

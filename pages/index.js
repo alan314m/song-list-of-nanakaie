@@ -40,11 +40,12 @@ export default function Home() {
         song.language
           ?.toString()
           .toLowerCase()
-          .includes(searchBox ? searchBox.toLowerCase() : ""))
-  );
-
-  const filteredSongListAfterToggle = filteredSongList.filter((song) =>
-    rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true
+          .includes(searchBox ? searchBox.toLowerCase() : "") || 
+          song.remarks
+          ?.toString()
+          .toLowerCase()
+          .includes(searchBox ? searchBox.toLowerCase() : "")) &&
+      (rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true)
   );
 
   //处理用户复制行为
@@ -85,10 +86,13 @@ export default function Home() {
               <div className={styles.centerFlexDiv}>
                 <Link href="https://live.bilibili.com/23777594" passHref>
                   <a target="_blank">
-                    <Button
-                      className={"mt-3 " + styles.customRapButton}
-                    >
-                      <img src="bilibili_logo.png" alt="bilibili logo" style={{ width: "20px", paddingBottom: "2px" }}/>{" "}前往七宝的直播间{" "}
+                    <Button className={"mt-3 " + styles.customRapButton}>
+                      <img
+                        src="bilibili_logo.png"
+                        alt="bilibili logo"
+                        style={{ width: "20px", paddingBottom: "2px" }}
+                      />{" "}
+                      前往七宝的直播间{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -181,6 +185,7 @@ export default function Home() {
                     <thead>
                       <tr>
                         <th>歌名</th>
+                        <th></th>
                         {/** 等歌手补充 */}
                         {/** <th>歌手</th> */}
                         <th>语言</th>
@@ -189,7 +194,7 @@ export default function Home() {
                     </thead>
                     <tbody>
                       <SongDetail
-                        filteredSongList={filteredSongListAfterToggle}
+                        filteredSongList={filteredSongList}
                         handleClickToCopy={handleClickToCopy}
                       />
                     </tbody>
