@@ -26,7 +26,7 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
     ))
   ) : (
     <tr>
-      <td className="display-6 text-center" colSpan="4">
+      <td className="display-6 text-center" colSpan="4" id="noSongInList">
         没有找到您想要的歌哟~
       </td>
     </tr>

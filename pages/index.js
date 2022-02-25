@@ -17,8 +17,8 @@ import SongDetail from "../components/SongDetail.component";
 export default function Home() {
   //状态保存: 下拉选单和搜索框
   const [filterSongInitialSelect, setFilterSongInitialSelect] = useState("");
+  const [rapAndPlayNSingSelect, setRapAndPlayNSingSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
-  const [rapOnlyToggle, setRapOnlyToggle] = useState(false);
 
   //复制成功用户反馈Toast
   const notify = (song_name) =>
@@ -40,12 +40,17 @@ export default function Home() {
         song.language
           ?.toString()
           .toLowerCase()
-          .includes(searchBox ? searchBox.toLowerCase() : "") || 
-          song.remarks
+          .includes(searchBox ? searchBox.toLowerCase() : "") ||
+        //搜索框搜备注
+        song.remarks
           ?.toString()
           .toLowerCase()
           .includes(searchBox ? searchBox.toLowerCase() : "")) &&
-      (rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true)
+      //Rap过滤按钮
+      // (rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true)
+      (rapAndPlayNSingSelect != ""
+        ? song.remarks?.toLowerCase().includes(rapAndPlayNSingSelect)
+        : true)
   );
 
   //处理用户复制行为
@@ -54,6 +59,23 @@ export default function Home() {
     copy("点歌 " + songName);
     // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
     notify(songName);
+  };
+
+  //随便听听
+  const handleRandomSong = () => {
+    let parentSelector = document.querySelector(".songList");
+    let random = Math.floor(
+      1 + Math.random() * parentSelector.childElementCount
+    );
+    let songName_ = document.querySelector(
+      ".songList>tr:nth-child(" + random + ")"
+    ).firstChild;
+    if (songName_.id == "noSongInList") {
+      toast.info("歌单已经空了!");
+    } else {
+      copy("点歌 " + songName_.innerText);
+      notify(songName_.innerText);
+    }
   };
 
   return (
@@ -117,13 +139,13 @@ export default function Home() {
           </Row>
           {/** 过滤器控件 */}
           <Row>
-            <Col sm={12} md={6}>
+            <Col xs={6} md={3}>
               <Form.Select
                 className={styles.filters}
                 aria-label="按拼音首字母或语言过滤"
                 onChange={(e) => setFilterSongInitialSelect(e.target.value)}
               >
-                <option value="">按拼音首字母或语言过滤</option>
+                <option value="">语言和首字母</option>
                 <option value="A">国语-A</option>
                 <option value="B">国语-B</option>
                 <option value="C">国语-C</option>
@@ -156,15 +178,15 @@ export default function Home() {
               </Form.Select>
             </Col>
             <Col xs={6} md={3}>
-              <div className="d-grid">
-                <Button
-                  className={styles.customRapButton}
-                  onClick={(e) => setRapOnlyToggle(!rapOnlyToggle)}
-                  style={rapOnlyToggle ? { backgroundColor: "#fff" } : {}}
-                >
-                  我要听七宝唱Rap!
-                </Button>
-              </div>
+              <Form.Select
+                className={styles.filters}
+                aria-label="七宝的绝活"
+                onChange={(e) => setRapAndPlayNSingSelect(e.target.value)}
+              >
+                <option value="">七宝的绝活</option>
+                <option value="rap">Rap</option>
+                <option value="弹唱">钢琴弹唱</option>
+              </Form.Select>
             </Col>
             <Col xs={6} md={3}>
               <Form.Control
@@ -174,6 +196,16 @@ export default function Home() {
                 placeholder="搜索"
                 onChange={(e) => setSearchBox(e.target.value)}
               />
+            </Col>
+            <Col xs={6} md={3}>
+              <div className="d-grid">
+                <Button
+                  className={styles.customRapButton}
+                  onClick={handleRandomSong}
+                >
+                  随便听听
+                </Button>
+              </div>
             </Col>
           </Row>
           {/** 歌单表格 */}
@@ -192,7 +224,7 @@ export default function Home() {
                         <th>备注</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="songList">
                       <SongDetail
                         filteredSongList={filteredSongList}
                         handleClickToCopy={handleClickToCopy}
