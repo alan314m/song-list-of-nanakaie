@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +20,8 @@ export default function Home() {
   const [filterSongInitialSelect, setFilterSongInitialSelect] = useState("");
   const [rapAndPlayNSingSelect, setRapAndPlayNSingSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
+
+  const imageLoader = require("../utils/ImageLoader");
 
   //复制成功用户反馈Toast
   const notify = (song_name) =>
@@ -56,7 +59,7 @@ export default function Home() {
   //处理用户复制行为
   const handleClickToCopy = (songName) => {
     //复制到剪贴板并发送Toast
-    copy("点歌 " + songName);
+    copy("点歌" + songName);
     // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
     notify(songName);
   };
@@ -96,10 +99,13 @@ export default function Home() {
           <Row>
             <Col>
               <div className={styles.centerFlexDiv}>
-                <img
-                  className={"pt-3 " + styles.avatar}
-                  src="./nanakaie.webp"
+                <Image
+                  loader={imageLoader}
+                  className={styles.avatar}
+                  src="nanakaie.webp"
                   alt="七宝的头像"
+                  width={250}
+                  height={250}
                 />
               </div>
               <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
@@ -109,11 +115,11 @@ export default function Home() {
                 <Link href="https://live.bilibili.com/23777594" passHref>
                   <a target="_blank">
                     <Button className={"mt-3 " + styles.customRapButton}>
-                      <img
-                        src="bilibili_logo.png"
-                        alt="bilibili logo"
-                        style={{ width: "20px", paddingBottom: "2px" }}
-                      />{" "}
+                        <img
+                        className={styles.biliIcon}
+                          src="/bilibili_logo.png"
+                          alt="bilibili logo"
+                        />{" "}
                       前往七宝的直播间{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +127,7 @@ export default function Home() {
                         height="20"
                         fill="currentColor"
                         className="bi bi-chevron-right"
-                        viewBox="0 0 16 20"
+                        viewBox="0 0 20 20"
                       >
                         <path
                           fillRule="evenodd"

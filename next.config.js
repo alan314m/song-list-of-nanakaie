@@ -4,5 +4,8 @@ module.exports = {
     return {
       '/': {page: "/"}
     }
+  },
+  images: {
+    loader: "custom"
   }
 };

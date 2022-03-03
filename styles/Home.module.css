@@ -47,6 +47,7 @@
 .centerFlexDiv {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
 .avatar {
@@ -103,6 +104,11 @@
 
 .upArrow {
   width: 16px;
+}
+
+.biliIcon {
+  width: 20px;
+  vertical-align: text-bottom;
 }
 
 @media (max-width: 768px) {
