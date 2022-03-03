@@ -73,6 +73,16 @@
   background-color: #d7c2f9;
 }
 
+.songRowPaid {
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  background-color: rgba(255, 223, 0, 0.1);
+}
+
+.songRowPaid:hover {
+  background-color: #d7c2f9;
+}
+
 .filters {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
@@ -102,7 +112,7 @@
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.upArrow {
+.tableIcons {
   width: 16px;
 }
 

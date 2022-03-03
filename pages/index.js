@@ -23,10 +23,6 @@ export default function Home() {
 
   const imageLoader = require("../utils/ImageLoader");
 
-  //复制成功用户反馈Toast
-  const notify = (song_name) =>
-    toast.success(`"` + song_name + `"成功复制到剪贴板!`);
-
   //根据首字母和搜索框进行过滤
   const filteredSongList = MusicList.filter(
     (song) =>
@@ -57,27 +53,44 @@ export default function Home() {
   );
 
   //处理用户复制行为
-  const handleClickToCopy = (songName) => {
+  const handleClickToCopy = (song) => {
     //复制到剪贴板并发送Toast
-    copy("点歌" + songName);
-    // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
-    notify(songName);
+    if (song.id.includes("paid")) {
+      //付费曲目
+      copy("点歌￥" + song.innerText);
+      // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
+      //复制成功反馈
+      toast.success(`付费曲目"` + song.innerText + `"成功复制到剪贴板!`);
+    } else {
+      //免费曲目
+      copy("点歌" + song.innerText);
+      // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
+      toast.success(`"` + song.innerText + `"成功复制到剪贴板!`);
+    }
   };
 
   //随便听听
   const handleRandomSong = () => {
+    //定位歌单
     let parentSelector = document.querySelector(".songList");
+    //随机生成序号
     let random = Math.floor(
       1 + Math.random() * parentSelector.childElementCount
     );
     let songName_ = document.querySelector(
       ".songList>tr:nth-child(" + random + ")"
     ).firstChild;
+    //如歌单无条目
     if (songName_.id == "noSongInList") {
-      toast.info("歌单已经空了!");
+      toast.info("歌单已经没歌了!");
+    } else if (songName_.id.includes("paid")) {
+      //如付费曲目
+      copy("点歌￥" + songName_.innerText);
+      toast.success(`付费曲目"` + songName_.innerText + `"成功复制到剪贴板!`);
     } else {
-      copy("点歌 " + songName_.innerText);
-      notify(songName_.innerText);
+      //如免费曲目
+      copy("点歌" + songName_.innerText);
+      toast.success(`"` + songName_.innerText + `"成功复制到剪贴板!`);
     }
   };
 
