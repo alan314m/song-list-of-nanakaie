@@ -44,7 +44,12 @@ export default function Home() {
         song.remarks
           ?.toString()
           .toLowerCase()
-          .includes(searchBox ? searchBox.toLowerCase() : "")) &&
+          .includes(searchBox ? searchBox.toLowerCase() : "") ||
+          song.artist
+          ?.toString()
+          .toLowerCase()
+          .includes(searchBox ? searchBox.toLowerCase() : "")
+          ) &&
       //Rap过滤按钮
       // (rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true)
       (rapAndPlayNSingSelect != ""
@@ -104,7 +109,7 @@ export default function Home() {
             content="七禾いえ,B站,bilibili,哔哩哔哩,电台唱见,歌单"
           />
           <meta name="description" content="七禾いえ的歌单" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.gif" type="image/gif" />
         </Head>
 
         <section className={styles.main}>
@@ -128,11 +133,11 @@ export default function Home() {
                 <Link href="https://live.bilibili.com/23777594" passHref>
                   <a target="_blank">
                     <Button className={"mt-3 " + styles.customRapButton}>
-                        <img
+                      <img
                         className={styles.biliIcon}
-                          src="/bilibili_logo.png"
-                          alt="bilibili logo"
-                        />{" "}
+                        src="/bilibili_logo.png"
+                        alt="bilibili logo"
+                      />{" "}
                       前往七宝的直播间{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -237,8 +242,7 @@ export default function Home() {
                       <tr>
                         <th>歌名</th>
                         <th></th>
-                        {/** 等歌手补充 */}
-                        {/** <th>歌手</th> */}
+                        <th>歌手</th>
                         <th>语言</th>
                         <th>备注</th>
                       </tr>
