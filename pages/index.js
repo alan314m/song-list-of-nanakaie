@@ -65,7 +65,7 @@ export default function Home() {
       copy("点歌￥" + song.innerText);
       // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
       //复制成功反馈
-      toast.success(`付费曲目"` + song.innerText + `"成功复制到剪贴板!`);
+      toast.success(`付费曲目"` + song.innerText + `"成功复制到剪贴板!记得发100的SC哦~`);
     } else {
       //免费曲目
       copy("点歌" + song.innerText);
@@ -91,7 +91,7 @@ export default function Home() {
     } else if (songName_.id.includes("paid")) {
       //如付费曲目
       copy("点歌￥" + songName_.innerText);
-      toast.success(`付费曲目"` + songName_.innerText + `"成功复制到剪贴板!`);
+      toast.success(`付费曲目"` + songName_.innerText + `"成功复制到剪贴板!记得发100的SC哦~`);
     } else {
       //如免费曲目
       copy("点歌" + songName_.innerText);
