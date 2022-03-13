@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -15,13 +15,25 @@ import MusicList from "../public/music_list_7.json";
 
 import SongDetail from "../components/SongDetail.component";
 
+import imageLoader from "../utils/ImageLoader";
+
 export default function Home() {
-  //状态保存: 下拉选单和搜索框
+  //状态保存: 下拉选单, 搜索框和回到顶部按钮
   const [filterSongInitialSelect, setFilterSongInitialSelect] = useState("");
   const [rapAndPlayNSingSelect, setRapAndPlayNSingSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
+  const [showButton, setShowButton] = useState(false);
 
-  const imageLoader = require("../utils/ImageLoader");
+  useEffect(() => {
+    //检测窗口滚动
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 600) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
 
   //根据首字母和搜索框进行过滤
   const filteredSongList = MusicList.filter(
@@ -45,11 +57,10 @@ export default function Home() {
           ?.toString()
           .toLowerCase()
           .includes(searchBox ? searchBox.toLowerCase() : "") ||
-          song.artist
+        song.artist
           ?.toString()
           .toLowerCase()
-          .includes(searchBox ? searchBox.toLowerCase() : "")
-          ) &&
+          .includes(searchBox ? searchBox.toLowerCase() : "")) &&
       //Rap过滤按钮
       // (rapOnlyToggle ? song.remarks?.toLowerCase().includes("rap") : true)
       (rapAndPlayNSingSelect != ""
@@ -65,7 +76,11 @@ export default function Home() {
       copy("点歌￥" + song.innerText);
       // navigator.clipboard.writeText("点歌 " + songName); //如支持iOS则可替换
       //复制成功反馈
-      toast.success(`付费曲目"` + song.innerText + `"成功复制到剪贴板!记得发100的SC或者水晶球哦~`);
+      toast.success(
+        `付费曲目"` +
+          song.innerText +
+          `"成功复制到剪贴板!记得发100的SC或者水晶球哦~`
+      );
     } else {
       //免费曲目
       copy("点歌" + song.innerText);
@@ -91,12 +106,23 @@ export default function Home() {
     } else if (songName_.id.includes("paid")) {
       //如付费曲目
       copy("点歌￥" + songName_.innerText);
-      toast.success(`付费曲目"` + songName_.innerText + `"成功复制到剪贴板!记得发100的SC或者水晶球哦~`);
+      toast.success(
+        `付费曲目"` +
+          songName_.innerText +
+          `"成功复制到剪贴板!记得发100的SC或者水晶球哦~`
+      );
     } else {
       //如免费曲目
       copy("点歌" + songName_.innerText);
       toast.success(`"` + songName_.innerText + `"成功复制到剪贴板!`);
     }
+  };
+
+  //滚动到顶部
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
   };
 
   return (
@@ -260,7 +286,29 @@ export default function Home() {
             </Col>
           </Row>
         </section>
-
+        {showButton ? (
+          <button
+            onClick={scrollToTop}
+            className={styles.backToTopBtn}
+            title="返回顶部"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-chevron-up"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+              />
+            </svg>
+          </button>
+        ) : (
+          <div></div>
+        )}
         <footer className={styles.footer}>
           Copyright © 2022 七宝和她的家人们
         </footer>

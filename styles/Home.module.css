@@ -16,7 +16,7 @@
 }
 
 .main {
-  min-height: 87vh;
+  min-height: 86vh;
 }
 
 .outerContainer {
@@ -103,6 +103,25 @@
 .customRapButton:hover {
   color: #575065;
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.backToTopBtn {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #575065;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  box-shadow: 0 5px 10px #ccc;
+  transition: 0.25s ease;
+}
+
+.backToTopBtn:hover {
+  background-color: white;
 }
 
 .tableIcons {
