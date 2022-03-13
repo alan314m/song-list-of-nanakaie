@@ -16,11 +16,33 @@ a {
   box-sizing: border-box;
 }
 
+/* Scroll Bar Specific*/
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #575065;
+  background-color: #575065;
   border-radius: 1rem;
 }
+
+/* Buttons For Scroll Bar */
+::-webkit-scrollbar-button:single-button {
+  background-color: none;
+  display: block;
+  border-style: solid;
+  height: 10px;
+  width: 10px;
+}
+
+/* Up Arrow */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #575065 transparent;
+}
+/* Down Arrow */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 5px 5px 0 5px;
+  border-color: #575065 transparent transparent transparent;
+}
+
