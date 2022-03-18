@@ -7,7 +7,15 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Container, Row, Col, Form, Table, Button, Spinner } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Table,
+  Button,
+  Spinner,
+} from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
@@ -208,77 +216,81 @@ export default function Home() {
             </Col>
           </Row>
           {/** 过滤器控件 */}
-          <Row>
-            <Col xs={6} md={3}>
-              <Form.Select
-                className={styles.filters}
-                aria-label="按拼音首字母或语言过滤"
-                onChange={(e) => setFilterSongInitialSelect(e.target.value)}
-              >
-                <option value="">语言和首字母</option>
-                <option value="A">国语-A</option>
-                <option value="B">国语-B</option>
-                <option value="C">国语-C</option>
-                <option value="D">国语-D</option>
-                <option value="E">国语-E</option>
-                <option value="F">国语-F</option>
-                <option value="G">国语-G</option>
-                <option value="H">国语-H</option>
-                <option value="I">国语-I</option>
-                <option value="J">国语-J</option>
-                <option value="K">国语-K</option>
-                <option value="L">国语-L</option>
-                <option value="M">国语-M</option>
-                <option value="N">国语-N</option>
-                <option value="O">国语-O</option>
-                <option value="P">国语-P</option>
-                <option value="Q">国语-Q</option>
-                <option value="R">国语-R</option>
-                <option value="S">国语-S</option>
-                <option value="T">国语-T</option>
-                <option value="U">国语-U</option>
-                <option value="W">国语-W</option>
-                <option value="X">国语-X</option>
-                <option value="Y">国语-Y</option>
-                <option value="Z">国语-Z</option>
-                <option value="粤语">粤语</option>
-                <option value="日语">日语</option>
-                <option value="韩语">韩语</option>
-                <option value="英语">英语</option>
-                <option value="闽南语">闽南语</option>
-              </Form.Select>
-            </Col>
-            <Col xs={6} md={3}>
-              <Form.Select
-                className={styles.filters}
-                aria-label="七宝的绝活"
-                onChange={(e) => setRapAndPlayNSingSelect(e.target.value)}
-              >
-                <option value="">七宝的绝活</option>
-                <option value="rap">Rap</option>
-                <option value="弹唱">钢琴弹唱</option>
-              </Form.Select>
-            </Col>
-            <Col xs={6} md={3}>
-              <Form.Control
-                className={styles.filters}
-                type="search"
-                aria-label="搜索"
-                placeholder="搜索"
-                onChange={(e) => setSearchBox(e.target.value)}
-              />
-            </Col>
-            <Col xs={6} md={3}>
-              <div className="d-grid">
-                <Button
-                  className={styles.customRapButton}
-                  onClick={handleRandomSong}
+          {!isLoading ? (
+            <Row>
+              <Col xs={6} md={3}>
+                <Form.Select
+                  className={styles.filters}
+                  aria-label="按拼音首字母或语言过滤"
+                  onChange={(e) => setFilterSongInitialSelect(e.target.value)}
                 >
-                  随便听听
-                </Button>
-              </div>
-            </Col>
-          </Row>
+                  <option value="">语言和首字母</option>
+                  <option value="A">国语-A</option>
+                  <option value="B">国语-B</option>
+                  <option value="C">国语-C</option>
+                  <option value="D">国语-D</option>
+                  <option value="E">国语-E</option>
+                  <option value="F">国语-F</option>
+                  <option value="G">国语-G</option>
+                  <option value="H">国语-H</option>
+                  <option value="I">国语-I</option>
+                  <option value="J">国语-J</option>
+                  <option value="K">国语-K</option>
+                  <option value="L">国语-L</option>
+                  <option value="M">国语-M</option>
+                  <option value="N">国语-N</option>
+                  <option value="O">国语-O</option>
+                  <option value="P">国语-P</option>
+                  <option value="Q">国语-Q</option>
+                  <option value="R">国语-R</option>
+                  <option value="S">国语-S</option>
+                  <option value="T">国语-T</option>
+                  <option value="U">国语-U</option>
+                  <option value="W">国语-W</option>
+                  <option value="X">国语-X</option>
+                  <option value="Y">国语-Y</option>
+                  <option value="Z">国语-Z</option>
+                  <option value="粤语">粤语</option>
+                  <option value="日语">日语</option>
+                  <option value="韩语">韩语</option>
+                  <option value="英语">英语</option>
+                  <option value="闽南语">闽南语</option>
+                </Form.Select>
+              </Col>
+              <Col xs={6} md={3}>
+                <Form.Select
+                  className={styles.filters}
+                  aria-label="七宝的绝活"
+                  onChange={(e) => setRapAndPlayNSingSelect(e.target.value)}
+                >
+                  <option value="">七宝的绝活</option>
+                  <option value="rap">Rap</option>
+                  <option value="弹唱">钢琴弹唱</option>
+                </Form.Select>
+              </Col>
+              <Col xs={6} md={3}>
+                <Form.Control
+                  className={styles.filters}
+                  type="search"
+                  aria-label="搜索"
+                  placeholder="搜索"
+                  onChange={(e) => setSearchBox(e.target.value)}
+                />
+              </Col>
+              <Col xs={6} md={3}>
+                <div className="d-grid">
+                  <Button
+                    className={styles.customRapButton}
+                    onClick={handleRandomSong}
+                  >
+                    随便听听
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          ) : (
+            <></>
+          )}
           {/** 歌单表格 */}
           <Row>
             <Col>
@@ -302,7 +314,7 @@ export default function Home() {
                             colSpan="5"
                             id="loadingMusicList"
                           >
-                          <Spinner animation="border" />{" "}歌单加载中
+                            <Spinner animation="border" /> 歌单加载中
                           </td>
                         </tr>
                       ) : (
