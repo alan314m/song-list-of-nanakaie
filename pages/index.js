@@ -23,6 +23,9 @@ export default function Home() {
   const [rapAndPlayNSingSelect, setRapAndPlayNSingSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
   const [showButton, setShowButton] = useState(false);
+  //歌单抓取
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     //检测窗口滚动
@@ -33,6 +36,13 @@ export default function Home() {
         setShowButton(false);
       }
     });
+    setLoading(true)
+    fetch('https://music-list-7-1309708725.cos.ap-chengdu.myqcloud.com/music_list_7.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
   }, []);
 
   //根据首字母和搜索框进行过滤
@@ -124,6 +134,9 @@ export default function Home() {
       top: 0,
     });
   };
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
 
   return (
     <div className={styles.outerContainer}>
