@@ -7,7 +7,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Container, Row, Col, Form, Table, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Table, Button, Spinner } from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
@@ -37,15 +37,20 @@ export default function Home() {
       }
     });
     setLoading(true);
-		(async()=>{
-			let musicListResponse = fetch(
-        "https://music-list-7-1309708725.cos.ap-chengdu.myqcloud.com/music_list_7.json", {mode: 'cors', headers: {
-          'Content-Type': 'application/json'
-        },})
-        const musicListData = await musicListResponse.json();
+    (async () => {
+      let musicListResponse = await fetch(
+        "https://music-list-7-1309708725.cos.ap-chengdu.myqcloud.com/music_list_7.json",
+        {
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const musicListData = await musicListResponse.json();
       setData(musicListData);
       setLoading(false);
-		})()
+    })();
   }, []);
 
   //根据首字母和搜索框进行过滤
@@ -138,8 +143,7 @@ export default function Home() {
     });
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  // if (!data) return <p>No profile data</p>;
+  // if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className={styles.outerContainer}>
@@ -291,10 +295,22 @@ export default function Home() {
                       </tr>
                     </thead>
                     <tbody className="songList">
-                      <SongDetail
-                        filteredSongList={filteredSongList}
-                        handleClickToCopy={handleClickToCopy}
-                      />
+                      {isLoading ? (
+                        <tr>
+                          <td
+                            className="display-6 text-center"
+                            colSpan="5"
+                            id="loadingMusicList"
+                          >
+                          <Spinner animation="border" />{" "}歌单加载中
+                          </td>
+                        </tr>
+                      ) : (
+                        <SongDetail
+                          filteredSongList={filteredSongList}
+                          handleClickToCopy={handleClickToCopy}
+                        />
+                      )}
                     </tbody>
                   </Table>
                 </Container>
@@ -329,7 +345,6 @@ export default function Home() {
           Copyright © 2022 七宝和她的家人们
         </footer>
       </Container>
-      <button onClick={(e)=>console.log(data)}>Data</button>
     </div>
   );
 }

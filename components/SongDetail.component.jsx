@@ -43,7 +43,7 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
     ))
   ) : (
     <tr>
-      <td className="display-6 text-center" colSpan="4" id="noSongInList">
+      <td className="display-6 text-center" colSpan="5" id="noSongInList">
         歌单里没有诶~隐藏歌单碰碰运气!
       </td>
     </tr>
