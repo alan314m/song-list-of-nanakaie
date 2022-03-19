@@ -44,10 +44,11 @@ export default function Home() {
         setShowButton(false);
       }
     });
+    //
     setLoading(true);
     (async () => {
       let musicListResponse = await fetch(
-        "https://music-list-7-1309708725.cos.ap-chengdu.myqcloud.com/music_list_7.json",
+        "https://music-list-7-1309708725.file.myqcloud.com/music_list_7.json",
         {
           mode: "cors",
           headers: {
