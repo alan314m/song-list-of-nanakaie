@@ -19,6 +19,7 @@ a {
 /* Scroll Bar Specific*/
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -44,5 +45,15 @@ a {
 ::-webkit-scrollbar-button:single-button:vertical:increment {
   border-width: 5px 5px 0 5px;
   border-color: #575065 transparent transparent transparent;
+}
+/* Left Arrow */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #575065 transparent transparent;
+}
+/* Right Arrow */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #575065;
 }
 
