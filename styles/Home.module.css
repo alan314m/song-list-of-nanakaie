@@ -133,6 +133,11 @@
   vertical-align: text-bottom;
 }
 
+.loadingSpinner {
+  width: calc(1.375rem + 1.5vw);
+  height: calc(1.375rem + 1.5vw);
+}
+
 @media (max-width: 768px) {
   .filters {
     margin-top: 12px;

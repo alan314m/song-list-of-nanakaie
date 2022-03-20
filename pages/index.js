@@ -19,7 +19,7 @@ import {
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
-import MusicList from "../public/music_list_7.json";
+// import MusicList from "../public/music_list_7.json";
 
 import SongDetail from "../components/SongDetail.component";
 
@@ -32,7 +32,18 @@ export default function Home() {
   const [searchBox, setSearchBox] = useState("");
   const [showButton, setShowButton] = useState(false);
   //歌单抓取
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([
+    {
+      index: "null",
+      song_name: "null",
+      artist: "null",
+      language: "null",
+      remarks: null,
+      initial: "null",
+      sticky_top: null,
+      paid: null,
+    },
+  ]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -47,23 +58,21 @@ export default function Home() {
     //
     setLoading(true);
     (async () => {
-      let musicListResponse = await fetch(
-        "https://music-list-7-1309708725.file.myqcloud.com/music_list_7.json",
-        {
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      let musicListResponse = await fetch("http://localhost:5000/all", {
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": "fjkasfasejflawdal;w"
+        },
+      });
       const musicListData = await musicListResponse.json();
-      setData(musicListData);
+      setData(musicListData.data);
       setLoading(false);
     })();
   }, []);
 
   //根据首字母和搜索框进行过滤
-  const filteredSongList = MusicList.filter(
+  const filteredSongList = data.filter(
     (song) =>
       //首字母下拉选单
       (filterSongInitialSelect != ""
@@ -315,7 +324,7 @@ export default function Home() {
                             colSpan="5"
                             id="loadingMusicList"
                           >
-                            <Spinner animation="border" /> 歌单加载中
+                            <Spinner animation="grow" className={styles.loadingSpinner}/> 歌单加载中
                           </td>
                         </tr>
                       ) : (

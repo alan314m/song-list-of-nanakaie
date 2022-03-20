@@ -11,7 +11,7 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
             ? styles.songRowTop
             : styles.songRow
         }
-        key={song.index}
+        key={song.id}
         onClick={(e) => handleClickToCopy(e.target.parentNode.firstChild)}
       >
         <td
