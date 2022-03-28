@@ -22,15 +22,15 @@ export default function Home() {
   const [filterSongInitialSelect, setFilterSongInitialSelect] = useState("");
   const [rapAndPlayNSingSelect, setRapAndPlayNSingSelect] = useState("");
   const [searchBox, setSearchBox] = useState("");
-  const [showButton, setShowButton] = useState(false);
+  const [showToTopButton, setToTopShowButton] = useState(false);
 
   useEffect(() => {
     //检测窗口滚动
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 600) {
-        setShowButton(true);
+        setToTopShowButton(true);
       } else {
-        setShowButton(false);
+        setToTopShowButton(false);
       }
     });
   }, []);
@@ -153,7 +153,10 @@ export default function Home() {
                 />
               </div>
               <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
-                七禾いえ的歌单
+                七禾いえ
+              </h1>
+              <h1 className={"display-6 text-center " + styles.grandTitle}>
+                和她拿手的<b>{filteredSongList.length}</b>首歌
               </h1>
               <div className={styles.centerFlexDiv}>
                 <Link href="https://live.bilibili.com/23777594" passHref>
@@ -286,7 +289,7 @@ export default function Home() {
             </Col>
           </Row>
         </section>
-        {showButton ? (
+        {showToTopButton ? (
           <button
             onClick={scrollToTop}
             className={styles.backToTopBtn}
