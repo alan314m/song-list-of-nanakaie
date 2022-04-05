@@ -31,7 +31,7 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
             <div></div>
           )}
           {song.paid == 1 ? (
-            <img src="rmb.png" alt="付费" className={styles.tableIcons}></img>
+            <img src="orb.png" alt="付费" className={styles.tableIcons}></img>
           ) : (
             <div></div>
           )}
