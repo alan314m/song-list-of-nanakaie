@@ -125,7 +125,8 @@
 }
 
 .tableIcons {
-  width: 16px;
+  display: flex;
+  width: 20px;
 }
 
 .biliIcon {

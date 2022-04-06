@@ -12,7 +12,13 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
             : styles.songRow
         }
         key={song.index}
-        onClick={(e) => handleClickToCopy(e.target.parentNode.firstChild)}
+        onClick={(e) => {
+          handleClickToCopy(
+            e.target.parentNode.firstChild.nodeName === "TD"
+              ? e.target.parentNode.firstChild
+              : e.target.parentNode.parentNode.firstChild
+          );
+        }}
       >
         <td
           className={styles.noWrapForce}
@@ -26,12 +32,18 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
               src="up_arrow.png"
               alt="置顶"
               className={styles.tableIcons}
+              title="置顶曲目"
             ></img>
           ) : (
             <div></div>
           )}
           {song.paid == 1 ? (
-            <img src="orb.png" alt="付费" className={styles.tableIcons}></img>
+            <img
+              src="orb.png"
+              alt="付费"
+              className={styles.tableIcons}
+              title="付费曲目(水晶球点唱)"
+            ></img>
           ) : (
             <div></div>
           )}
