@@ -124,9 +124,13 @@
   background-color: white;
 }
 
+.tableIconTd {
+  padding: 0.25rem !important;
+}
+
 .tableIcons {
   display: flex;
-  width: 20px;
+  width: 26px;
 }
 
 .biliIcon {

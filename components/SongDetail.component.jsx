@@ -26,7 +26,7 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
         >
           {song.song_name}
         </td>
-        <td>
+        <td className={styles.tableIconTd}>
           {song.sticky_top == 1 ? (
             <img
               src="up_arrow.png"
