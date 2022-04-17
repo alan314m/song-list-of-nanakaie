@@ -371,7 +371,7 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("I");
                             }}
-                            style={initialFilter=="H"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={initialFilter=="I"?{ backgroundColor: "#d7c2f9"}:{}}
                           >
                             首字母-I
                           </Dropdown.Item>
