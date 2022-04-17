@@ -143,7 +143,7 @@ export default function Home() {
     );
     let songName_ = document.querySelector(
       ".songList>tr:nth-child(" + random + ")"
-    ).firstChild;
+    ).childNodes[1];
     //如歌单无条目
     if (songName_.id == "noSongInList") {
       toast.info("歌单已经没歌了!");
@@ -291,7 +291,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("A");
                             }}
-                            style={initialFilter=="A"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "A"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-A
                           </Dropdown.Item>
@@ -301,7 +305,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("B");
                             }}
-                            style={initialFilter=="B"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "B"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-B
                           </Dropdown.Item>
@@ -311,7 +319,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("C");
                             }}
-                            style={initialFilter=="C"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "C"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-C
                           </Dropdown.Item>
@@ -321,7 +333,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("D");
                             }}
-                            style={initialFilter=="D"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "D"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-D
                           </Dropdown.Item>
@@ -331,7 +347,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("E");
                             }}
-                            style={initialFilter=="E"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "E"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-E
                           </Dropdown.Item>
@@ -341,7 +361,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("F");
                             }}
-                            style={initialFilter=="F"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "F"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-F
                           </Dropdown.Item>
@@ -351,7 +375,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("G");
                             }}
-                            style={initialFilter=="G"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "G"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-G
                           </Dropdown.Item>
@@ -361,7 +389,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("H");
                             }}
-                            style={initialFilter=="H"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "H"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-H
                           </Dropdown.Item>
@@ -371,7 +403,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("I");
                             }}
-                            style={initialFilter=="I"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "I"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-I
                           </Dropdown.Item>
@@ -381,7 +417,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("J");
                             }}
-                            style={initialFilter=="J"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "J"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-J
                           </Dropdown.Item>
@@ -391,7 +431,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("K");
                             }}
-                            style={initialFilter=="K"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "K"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-K
                           </Dropdown.Item>
@@ -401,7 +445,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("L");
                             }}
-                            style={initialFilter=="L"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "L"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-L
                           </Dropdown.Item>
@@ -411,7 +459,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("M");
                             }}
-                            style={initialFilter=="M"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "M"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-M
                           </Dropdown.Item>
@@ -421,7 +473,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("N");
                             }}
-                            style={initialFilter=="N"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "N"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-N
                           </Dropdown.Item>
@@ -431,7 +487,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("O");
                             }}
-                            style={initialFilter=="O"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "O"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-O
                           </Dropdown.Item>
@@ -441,7 +501,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("P");
                             }}
-                            style={initialFilter=="P"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "P"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-P
                           </Dropdown.Item>
@@ -451,7 +515,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("Q");
                             }}
-                            style={initialFilter=="Q"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "Q"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-Q
                           </Dropdown.Item>
@@ -461,7 +529,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("R");
                             }}
-                            style={initialFilter=="R"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "R"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-R
                           </Dropdown.Item>
@@ -471,7 +543,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("S");
                             }}
-                            style={initialFilter=="S"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "S"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-S
                           </Dropdown.Item>
@@ -481,7 +557,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("T");
                             }}
-                            style={initialFilter=="T"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "T"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-T
                           </Dropdown.Item>
@@ -491,7 +571,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("U");
                             }}
-                            style={initialFilter=="U"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "U"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-U
                           </Dropdown.Item>
@@ -501,7 +585,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("W");
                             }}
-                            style={initialFilter=="W"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "W"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-W
                           </Dropdown.Item>
@@ -511,7 +599,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("X");
                             }}
-                            style={initialFilter=="X"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "X"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-X
                           </Dropdown.Item>
@@ -521,7 +613,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("Y");
                             }}
-                            style={initialFilter=="Y"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "Y"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-Y
                           </Dropdown.Item>
@@ -531,7 +627,11 @@ export default function Home() {
                                 ? setInitialState("")
                                 : setInitialState("Z");
                             }}
-                            style={initialFilter=="Z"?{ backgroundColor: "#d7c2f9"}:{}}
+                            style={
+                              initialFilter == "Z"
+                                ? { backgroundColor: "#d7c2f9" }
+                                : {}
+                            }
                           >
                             首字母-Z
                           </Dropdown.Item>
@@ -613,11 +713,11 @@ export default function Home() {
                     <Col xs={6} md={3}>
                       <div className="d-grid">
                         <Button
-                        className={
-                          remarkFilter == "弹唱"
-                            ? styles.customCategoryButtonActive
-                            : styles.customCategoryButton
-                        }
+                          className={
+                            remarkFilter == "弹唱"
+                              ? styles.customCategoryButtonActive
+                              : styles.customCategoryButton
+                          }
                           onClick={(e) => {
                             remarkFilter == "弹唱"
                               ? setRemarkState("")
@@ -631,11 +731,11 @@ export default function Home() {
                     <Col xs={6} md={3}>
                       <div className="d-grid">
                         <Button
-                        className={
-                          remarkFilter == "rap"
-                            ? styles.customCategoryButtonActive
-                            : styles.customCategoryButton
-                        }
+                          className={
+                            remarkFilter == "rap"
+                              ? styles.customCategoryButtonActive
+                              : styles.customCategoryButton
+                          }
                           onClick={(e) => {
                             remarkFilter == "rap"
                               ? setRemarkState("")
@@ -649,11 +749,11 @@ export default function Home() {
                     <Col xs={6} md={3}>
                       <div className="d-grid">
                         <Button
-                        className={
-                          paidFilter
-                            ? styles.customCategoryButtonActive
-                            : styles.customCategoryButton
-                        }
+                          className={
+                            paidFilter
+                              ? styles.customCategoryButtonActive
+                              : styles.customCategoryButton
+                          }
                           onClick={(e) => {
                             paidFilter
                               ? setPaidState(false)
@@ -698,8 +798,8 @@ export default function Home() {
                   <Table responsive>
                     <thead>
                       <tr>
-                        <th>歌名</th>
                         <th></th>
+                        <th>歌名</th>
                         <th>歌手</th>
                         <th>语言</th>
                         <th>备注</th>

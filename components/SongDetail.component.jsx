@@ -15,17 +15,11 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
         onClick={(e) => {
           handleClickToCopy(
             e.target.parentNode.firstChild.nodeName === "TD"
-              ? e.target.parentNode.firstChild
-              : e.target.parentNode.parentNode.firstChild
+              ? e.target.parentNode.childNodes[1]
+              : e.target.parentNode.parentNode.childNodes[1]
           );
         }}
       >
-        <td
-          className={styles.noWrapForce}
-          id={song.paid ? `paid ${song.index}` : song.index}
-        >
-          {song.song_name}
-        </td>
         <td className={styles.tableIconTd}>
           {song.sticky_top == 1 ? (
             <img
@@ -47,6 +41,12 @@ export default function SongDetail({ filteredSongList, handleClickToCopy }) {
           ) : (
             <div></div>
           )}
+        </td>
+        <td
+          className={styles.noWrapForce}
+          id={song.paid ? `paid ${song.index}` : song.index}
+        >
+          {song.song_name}
         </td>
         <td className={styles.noWrapForce}>{song.artist}</td>
         <td className={styles.noWrapForce}>{song.language}</td>
