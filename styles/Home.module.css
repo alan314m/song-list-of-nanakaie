@@ -80,6 +80,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 1rem;
+  margin-top: 12px;
 }
 
 .filters:focus {
@@ -87,22 +88,116 @@
   box-shadow: none;
 }
 
-.customRapButton {
+.customRandomButton {
   color: #575065;
   border-radius: 1rem;
   border: none;
+  margin-top: 12px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.customRapButton:focus {
+.customRandomButton:focus {
   color: #575065;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
 
-.customRapButton:hover {
+.customRandomButton:hover {
   color: #575065;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.customCategoryButton {
+  color: #575065;
+  border-radius: 1rem;
+  margin-bottom: 12px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.customCategoryButton:focus {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.customCategoryButton:hover {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.customCategoryButtonActive {
+  color: #575065;
+  border-radius: 1rem;
+  margin-bottom: 12px;
+  border: none;
+  background-color: #d7c2f9;
+}
+
+.customCategoryButtonActive:focus {
+  color: #575065;
+  background-color: #d7c2f9;
+  box-shadow: none;
+}
+
+.customCategoryButtonActive:hover {
+  color: #575065;
+  background-color: #AC9BC7;
+}
+
+/* .customCategoryButton:active {
+  background-color: #d7c2f9 !important;
+  color: #575065;
+} */
+
+.mandarinBtn > button {
+  color: #575065;
+  border-radius: 1rem;
+  margin-bottom: 12px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mandarinBtn > button:hover {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.mandarinBtn > button:focus {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.mandarinBtn > button:active {
+  color: #575065;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: none;
+}
+
+.mandarinBtnActive > button {
+  color: #575065;
+  border-radius: 1rem;
+  margin-bottom: 12px;
+  border: none;
+  background-color: #d7c2f9;
+}
+
+.mandarinBtnActive > button:hover {
+  color: #575065;
+  background-color: #AC9BC7;
+}
+
+.mandarinBtnActive > button:focus {
+  color: #575065;
+  background-color: #d7c2f9;
+  box-shadow: none;
+}
+
+.mandarinBtnActive > button:active {
+  color: #575065;
+  background-color: #d7c2f9;
+  box-shadow: none;
 }
 
 .backToTopBtn {
@@ -139,10 +234,10 @@
 }
 
 @media (max-width: 768px) {
-  .filters {
+  /* .filters {
     margin-top: 12px;
   }
-  .customRapButton {
+  .customRandomButton {
     margin-top: 12px;
-  }
+  } */
 }

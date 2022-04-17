@@ -16,6 +16,11 @@ a {
   box-sizing: border-box;
 }
 
+.dropdown-toggle[aria-expanded="true"] {
+  background:#FFF !important;
+  color:#575065 !important;
+}
+
 /* Scroll Bar Specific*/
 ::-webkit-scrollbar {
   width: 10px;
