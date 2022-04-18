@@ -144,8 +144,7 @@ export default function Home() {
     let songName_ = document.querySelector(
       ".songList>tr:nth-child(" + random + ")"
     ).childNodes[1];
-    //如歌单无条目
-    if (songName_.id == "noSongInList") {
+    if (!songName_) {
       toast.info("歌单已经没歌了!");
     } else if (songName_.id.includes("paid")) {
       //如付费曲目
