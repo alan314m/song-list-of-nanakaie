@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 package-lock.json
+yarn.lock
 
 # testing
 /coverage
@@ -37,4 +38,3 @@ yarn-error.log*
 
 # serverless deployment
 scf_bootstrap
-
