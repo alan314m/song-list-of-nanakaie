@@ -2,7 +2,12 @@ import styles from "../styles/Home.module.css";
 
 import { SplitButton, Dropdown } from "react-bootstrap";
 
-export default function MandarinBtn({languageFilter, initialFilter, setLanguageState, setInitialState}) {
+export default function MandarinBtn({
+  languageFilter,
+  initialFilter,
+  setLanguageState,
+  setInitialState,
+}) {
   return (
     <div className="d-grid">
       <SplitButton

@@ -7,14 +7,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Table,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Col, Form, Table, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
@@ -27,7 +20,12 @@ import imageLoader from "../utils/ImageLoader";
 
 export default function Home() {
   //状态保存: 类别选择, 搜索框和回到顶部按钮
-  const [categorySelection, setCategotySelection] = useState({lang:"", initial: "", paid: false, remark:""});
+  const [categorySelection, setCategotySelection] = useState({
+    lang: "",
+    initial: "",
+    paid: false,
+    remark: "",
+  });
   const [searchBox, setSearchBox] = useState("");
   const [showToTopButton, setToTopShowButton] = useState(false);
 
@@ -65,9 +63,13 @@ export default function Home() {
           .toLowerCase()
           .includes(searchBox ? searchBox.toLowerCase() : "")) &&
       //语言过滤按钮
-      (categorySelection.lang != "" ? song.language?.includes(categorySelection.lang) : true) &&
+      (categorySelection.lang != ""
+        ? song.language?.includes(categorySelection.lang)
+        : true) &&
       //首字母过滤按钮
-      (categorySelection.initial != "" ? song.initial?.includes(categorySelection.initial) : true) &&
+      (categorySelection.initial != ""
+        ? song.initial?.includes(categorySelection.initial)
+        : true) &&
       //首字母过滤按钮
       (categorySelection.remark != ""
         ? song.remarks?.toLowerCase().includes(categorySelection.remark)
@@ -99,22 +101,32 @@ export default function Home() {
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setCategotySelection({lang: lang, initial: "", paid: false, remark:""});
+    setCategotySelection({ lang: lang, initial: "", paid: false, remark: "" });
   };
 
   //改变首字母过滤状态
   const setInitialState = (initial) => {
-    setCategotySelection({lang: "国语", initial: initial, paid: false, remark:""});
+    setCategotySelection({
+      lang: "国语",
+      initial: initial,
+      paid: false,
+      remark: "",
+    });
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
-    setCategotySelection({lang: "", initial: "", paid: false, remark: remark});
+    setCategotySelection({
+      lang: "",
+      initial: "",
+      paid: false,
+      remark: remark,
+    });
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setCategotySelection({lang: "", initial: "", paid: paid, remark: ""});
+    setCategotySelection({ lang: "", initial: "", paid: paid, remark: "" });
   };
 
   //随便听听
