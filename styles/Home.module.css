@@ -145,11 +145,6 @@
   background-color: #AC9BC7;
 }
 
-/* .customCategoryButton:active {
-  background-color: #d7c2f9 !important;
-  color: #575065;
-} */
-
 .mandarinBtn > button {
   color: #575065;
   border-radius: 1rem;
@@ -231,6 +226,22 @@
 .biliIcon {
   width: 20px;
   vertical-align: text-bottom;
+}
+
+.categorySelectionContainer {
+  border: 3px solid #575065;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.categorySelectionTitle {
+  position: relative;
+  top: -2rem;
+  background-color: #F9DBE7;
+  margin: auto;
+  text-align: center;
+  width: 215px;
+  height: 16px;
 }
 
 @media (max-width: 768px) {

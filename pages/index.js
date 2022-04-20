@@ -14,8 +14,6 @@ import {
   Form,
   Table,
   Button,
-  SplitButton,
-  Dropdown,
 } from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
@@ -23,15 +21,13 @@ import copy from "copy-to-clipboard";
 import MusicList from "../public/music_list_7.json";
 
 import SongDetail from "../components/SongDetail.component";
+import MandarinBtn from "../components/MandarinBtn.component";
 
 import imageLoader from "../utils/ImageLoader";
 
 export default function Home() {
-  //状态保存: 下拉选单, 搜索框和回到顶部按钮
-  const [languageFilter, setLanguageFilter] = useState("");
-  const [initialFilter, setInitialFilter] = useState("");
-  const [paidFilter, setPaidFilter] = useState("");
-  const [remarkFilter, setRemarkFilter] = useState("");
+  //状态保存: 类别选择, 搜索框和回到顶部按钮
+  const [categorySelection, setCategotySelection] = useState({lang:"", initial: "", paid: false, remark:""});
   const [searchBox, setSearchBox] = useState("");
   const [showToTopButton, setToTopShowButton] = useState(false);
 
@@ -69,15 +65,15 @@ export default function Home() {
           .toLowerCase()
           .includes(searchBox ? searchBox.toLowerCase() : "")) &&
       //语言过滤按钮
-      (languageFilter != "" ? song.language?.includes(languageFilter) : true) &&
+      (categorySelection.lang != "" ? song.language?.includes(categorySelection.lang) : true) &&
       //首字母过滤按钮
-      (initialFilter != "" ? song.initial?.includes(initialFilter) : true) &&
+      (categorySelection.initial != "" ? song.initial?.includes(categorySelection.initial) : true) &&
       //首字母过滤按钮
-      (remarkFilter != ""
-        ? song.remarks?.toLowerCase().includes(remarkFilter)
+      (categorySelection.remark != ""
+        ? song.remarks?.toLowerCase().includes(categorySelection.remark)
         : true) &&
       //付费过滤按钮
-      (paidFilter ? song.paid == 1 : true)
+      (categorySelection.paid ? song.paid == 1 : true)
   );
 
   //处理用户复制行为
@@ -103,34 +99,22 @@ export default function Home() {
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setLanguageFilter(lang);
-    setInitialFilter("");
-    setRemarkFilter("");
-    setPaidFilter(false);
+    setCategotySelection({lang: lang, initial: "", paid: false, remark:""});
   };
 
   //改变首字母过滤状态
   const setInitialState = (initial) => {
-    setLanguageFilter("国语");
-    setInitialFilter(initial);
-    setRemarkFilter("");
-    setPaidFilter(false);
+    setCategotySelection({lang: "国语", initial: initial, paid: false, remark:""});
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
-    setLanguageFilter("");
-    setInitialFilter("");
-    setRemarkFilter(remark);
-    setPaidFilter(false);
+    setCategotySelection({lang: "", initial: "", paid: false, remark: remark});
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setLanguageFilter("");
-    setInitialFilter("");
-    setRemarkFilter("");
-    setPaidFilter(paid);
+    setCategotySelection({lang: "", initial: "", paid: paid, remark: ""});
   };
 
   //随便听听
@@ -236,24 +220,8 @@ export default function Home() {
           {/** 过滤器控件 */}
           <Row>
             <Col>
-              <div
-                style={{
-                  border: "3px solid #575065",
-                  borderRadius: "1rem",
-                  padding: "1rem",
-                }}
-              >
-                <h5
-                  style={{
-                    position: "relative",
-                    top: "-2rem",
-                    backgroundColor: "#F9DBE7",
-                    margin: "auto",
-                    textAlign: "center",
-                    width: "215px",
-                    height: "16px",
-                  }}
-                >
+              <div className={styles.categorySelectionContainer}>
+                <h5 className={styles.categorySelectionTitle}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -270,383 +238,23 @@ export default function Home() {
                 <Container fluid>
                   <Row>
                     <Col xs={6} md={3}>
-                      <div className="d-grid">
-                        <SplitButton
-                          title="国语"
-                          className={
-                            languageFilter == "国语"
-                              ? styles.mandarinBtnActive
-                              : styles.mandarinBtn
-                          }
-                          onClick={(e) => {
-                            languageFilter == "国语"
-                              ? setLanguageState("")
-                              : setLanguageState("国语");
-                          }}
-                        >
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "A"
-                                ? setInitialState("")
-                                : setInitialState("A");
-                            }}
-                            style={
-                              initialFilter == "A"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-A
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "B"
-                                ? setInitialState("")
-                                : setInitialState("B");
-                            }}
-                            style={
-                              initialFilter == "B"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-B
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "C"
-                                ? setInitialState("")
-                                : setInitialState("C");
-                            }}
-                            style={
-                              initialFilter == "C"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-C
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "D"
-                                ? setInitialState("")
-                                : setInitialState("D");
-                            }}
-                            style={
-                              initialFilter == "D"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-D
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "E"
-                                ? setInitialState("")
-                                : setInitialState("E");
-                            }}
-                            style={
-                              initialFilter == "E"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-E
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "F"
-                                ? setInitialState("")
-                                : setInitialState("F");
-                            }}
-                            style={
-                              initialFilter == "F"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-F
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "G"
-                                ? setInitialState("")
-                                : setInitialState("G");
-                            }}
-                            style={
-                              initialFilter == "G"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-G
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "H"
-                                ? setInitialState("")
-                                : setInitialState("H");
-                            }}
-                            style={
-                              initialFilter == "H"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-H
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "I"
-                                ? setInitialState("")
-                                : setInitialState("I");
-                            }}
-                            style={
-                              initialFilter == "I"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-I
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "J"
-                                ? setInitialState("")
-                                : setInitialState("J");
-                            }}
-                            style={
-                              initialFilter == "J"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-J
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "K"
-                                ? setInitialState("")
-                                : setInitialState("K");
-                            }}
-                            style={
-                              initialFilter == "K"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-K
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "L"
-                                ? setInitialState("")
-                                : setInitialState("L");
-                            }}
-                            style={
-                              initialFilter == "L"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-L
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "M"
-                                ? setInitialState("")
-                                : setInitialState("M");
-                            }}
-                            style={
-                              initialFilter == "M"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-M
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "N"
-                                ? setInitialState("")
-                                : setInitialState("N");
-                            }}
-                            style={
-                              initialFilter == "N"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-N
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "O"
-                                ? setInitialState("")
-                                : setInitialState("O");
-                            }}
-                            style={
-                              initialFilter == "O"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-O
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "P"
-                                ? setInitialState("")
-                                : setInitialState("P");
-                            }}
-                            style={
-                              initialFilter == "P"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-P
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "Q"
-                                ? setInitialState("")
-                                : setInitialState("Q");
-                            }}
-                            style={
-                              initialFilter == "Q"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-Q
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "R"
-                                ? setInitialState("")
-                                : setInitialState("R");
-                            }}
-                            style={
-                              initialFilter == "R"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-R
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "S"
-                                ? setInitialState("")
-                                : setInitialState("S");
-                            }}
-                            style={
-                              initialFilter == "S"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-S
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "T"
-                                ? setInitialState("")
-                                : setInitialState("T");
-                            }}
-                            style={
-                              initialFilter == "T"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-T
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "U"
-                                ? setInitialState("")
-                                : setInitialState("U");
-                            }}
-                            style={
-                              initialFilter == "U"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-U
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "W"
-                                ? setInitialState("")
-                                : setInitialState("W");
-                            }}
-                            style={
-                              initialFilter == "W"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-W
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "X"
-                                ? setInitialState("")
-                                : setInitialState("X");
-                            }}
-                            style={
-                              initialFilter == "X"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-X
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "Y"
-                                ? setInitialState("")
-                                : setInitialState("Y");
-                            }}
-                            style={
-                              initialFilter == "Y"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-Y
-                          </Dropdown.Item>
-                          <Dropdown.Item
-                            onClick={(e) => {
-                              initialFilter == "Z"
-                                ? setInitialState("")
-                                : setInitialState("Z");
-                            }}
-                            style={
-                              initialFilter == "Z"
-                                ? { backgroundColor: "#d7c2f9" }
-                                : {}
-                            }
-                          >
-                            首字母-Z
-                          </Dropdown.Item>
-                        </SplitButton>
-                      </div>
+                      <MandarinBtn
+                        languageFilter={categorySelection.lang}
+                        initialFilter={categorySelection.initial}
+                        setLanguageState={setLanguageState}
+                        setInitialState={setInitialState}
+                      />
                     </Col>
                     <Col xs={6} md={3}>
                       <div className="d-grid">
                         <Button
                           className={
-                            languageFilter == "日语"
+                            categorySelection.lang == "日语"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            languageFilter == "日语"
+                            categorySelection.lang == "日语"
                               ? setLanguageState("")
                               : setLanguageState("日语");
                           }}
@@ -659,12 +267,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            languageFilter == "英语"
+                            categorySelection.lang == "英语"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            languageFilter == "英语"
+                            categorySelection.lang == "英语"
                               ? setLanguageState("")
                               : setLanguageState("英语");
                           }}
@@ -677,12 +285,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            languageFilter == "粤语"
+                            categorySelection.lang == "粤语"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            languageFilter == "粤语"
+                            categorySelection.lang == "粤语"
                               ? setLanguageState("")
                               : setLanguageState("粤语");
                           }}
@@ -695,12 +303,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            languageFilter == "韩语"
+                            categorySelection.lang == "韩语"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            languageFilter == "韩语"
+                            categorySelection.lang == "韩语"
                               ? setLanguageState("")
                               : setLanguageState("韩语");
                           }}
@@ -713,12 +321,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            remarkFilter == "弹唱"
+                            categorySelection.remark == "弹唱"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            remarkFilter == "弹唱"
+                            categorySelection.remark == "弹唱"
                               ? setRemarkState("")
                               : setRemarkState("弹唱");
                           }}
@@ -731,12 +339,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            remarkFilter == "rap"
+                            categorySelection.remark == "rap"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            remarkFilter == "rap"
+                            categorySelection.remark == "rap"
                               ? setRemarkState("")
                               : setRemarkState("rap");
                           }}
@@ -749,12 +357,12 @@ export default function Home() {
                       <div className="d-grid">
                         <Button
                           className={
-                            paidFilter
+                            categorySelection.paid
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            paidFilter
+                            categorySelection.paid
                               ? setPaidState(false)
                               : setPaidState(true);
                           }}
