@@ -111,7 +111,7 @@
 
 .customCategoryButtonActive {
   color: #575065;
-  color: #643AA1;
+  /* color: #643AA1; */
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
