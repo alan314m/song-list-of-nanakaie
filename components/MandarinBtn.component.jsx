@@ -8,6 +8,7 @@ export default function MandarinBtn({
   setLanguageState,
   setInitialState,
 }) {
+  const activeColor = "#d7c2f9";
   return (
     <div className="d-grid">
       <SplitButton
@@ -27,7 +28,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "A" ? setInitialState("") : setInitialState("A");
           }}
-          style={initialFilter == "A" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "A" ? { backgroundColor: activeColor } : {}}
         >
           首字母-A
         </Dropdown.Item>
@@ -35,7 +36,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "B" ? setInitialState("") : setInitialState("B");
           }}
-          style={initialFilter == "B" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "B" ? { backgroundColor: activeColor } : {}}
         >
           首字母-B
         </Dropdown.Item>
@@ -43,7 +44,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "C" ? setInitialState("") : setInitialState("C");
           }}
-          style={initialFilter == "C" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "C" ? { backgroundColor: activeColor } : {}}
         >
           首字母-C
         </Dropdown.Item>
@@ -51,7 +52,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "D" ? setInitialState("") : setInitialState("D");
           }}
-          style={initialFilter == "D" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "D" ? { backgroundColor: activeColor } : {}}
         >
           首字母-D
         </Dropdown.Item>
@@ -59,7 +60,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "E" ? setInitialState("") : setInitialState("E");
           }}
-          style={initialFilter == "E" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "E" ? { backgroundColor: activeColor } : {}}
         >
           首字母-E
         </Dropdown.Item>
@@ -67,7 +68,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "F" ? setInitialState("") : setInitialState("F");
           }}
-          style={initialFilter == "F" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "F" ? { backgroundColor: activeColor } : {}}
         >
           首字母-F
         </Dropdown.Item>
@@ -75,7 +76,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "G" ? setInitialState("") : setInitialState("G");
           }}
-          style={initialFilter == "G" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "G" ? { backgroundColor: activeColor } : {}}
         >
           首字母-G
         </Dropdown.Item>
@@ -83,7 +84,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "H" ? setInitialState("") : setInitialState("H");
           }}
-          style={initialFilter == "H" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "H" ? { backgroundColor: activeColor } : {}}
         >
           首字母-H
         </Dropdown.Item>
@@ -91,7 +92,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "I" ? setInitialState("") : setInitialState("I");
           }}
-          style={initialFilter == "I" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "I" ? { backgroundColor: activeColor } : {}}
         >
           首字母-I
         </Dropdown.Item>
@@ -99,7 +100,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "J" ? setInitialState("") : setInitialState("J");
           }}
-          style={initialFilter == "J" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "J" ? { backgroundColor: activeColor } : {}}
         >
           首字母-J
         </Dropdown.Item>
@@ -107,7 +108,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "K" ? setInitialState("") : setInitialState("K");
           }}
-          style={initialFilter == "K" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "K" ? { backgroundColor: activeColor } : {}}
         >
           首字母-K
         </Dropdown.Item>
@@ -115,7 +116,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "L" ? setInitialState("") : setInitialState("L");
           }}
-          style={initialFilter == "L" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "L" ? { backgroundColor: activeColor } : {}}
         >
           首字母-L
         </Dropdown.Item>
@@ -123,7 +124,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "M" ? setInitialState("") : setInitialState("M");
           }}
-          style={initialFilter == "M" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "M" ? { backgroundColor: activeColor } : {}}
         >
           首字母-M
         </Dropdown.Item>
@@ -131,7 +132,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "N" ? setInitialState("") : setInitialState("N");
           }}
-          style={initialFilter == "N" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "N" ? { backgroundColor: activeColor } : {}}
         >
           首字母-N
         </Dropdown.Item>
@@ -139,7 +140,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "O" ? setInitialState("") : setInitialState("O");
           }}
-          style={initialFilter == "O" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "O" ? { backgroundColor: activeColor } : {}}
         >
           首字母-O
         </Dropdown.Item>
@@ -147,7 +148,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "P" ? setInitialState("") : setInitialState("P");
           }}
-          style={initialFilter == "P" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "P" ? { backgroundColor: activeColor } : {}}
         >
           首字母-P
         </Dropdown.Item>
@@ -155,7 +156,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "Q" ? setInitialState("") : setInitialState("Q");
           }}
-          style={initialFilter == "Q" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "Q" ? { backgroundColor: activeColor } : {}}
         >
           首字母-Q
         </Dropdown.Item>
@@ -163,7 +164,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "R" ? setInitialState("") : setInitialState("R");
           }}
-          style={initialFilter == "R" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "R" ? { backgroundColor: activeColor } : {}}
         >
           首字母-R
         </Dropdown.Item>
@@ -171,7 +172,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "S" ? setInitialState("") : setInitialState("S");
           }}
-          style={initialFilter == "S" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "S" ? { backgroundColor: activeColor } : {}}
         >
           首字母-S
         </Dropdown.Item>
@@ -179,7 +180,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "T" ? setInitialState("") : setInitialState("T");
           }}
-          style={initialFilter == "T" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "T" ? { backgroundColor: activeColor } : {}}
         >
           首字母-T
         </Dropdown.Item>
@@ -187,7 +188,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "U" ? setInitialState("") : setInitialState("U");
           }}
-          style={initialFilter == "U" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "U" ? { backgroundColor: activeColor } : {}}
         >
           首字母-U
         </Dropdown.Item>
@@ -195,7 +196,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "W" ? setInitialState("") : setInitialState("W");
           }}
-          style={initialFilter == "W" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "W" ? { backgroundColor: activeColor } : {}}
         >
           首字母-W
         </Dropdown.Item>
@@ -203,7 +204,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "X" ? setInitialState("") : setInitialState("X");
           }}
-          style={initialFilter == "X" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "X" ? { backgroundColor: activeColor } : {}}
         >
           首字母-X
         </Dropdown.Item>
@@ -211,7 +212,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "Y" ? setInitialState("") : setInitialState("Y");
           }}
-          style={initialFilter == "Y" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "Y" ? { backgroundColor: activeColor } : {}}
         >
           首字母-Y
         </Dropdown.Item>
@@ -219,7 +220,7 @@ export default function MandarinBtn({
           onClick={(e) => {
             initialFilter == "Z" ? setInitialState("") : setInitialState("Z");
           }}
-          style={initialFilter == "Z" ? { backgroundColor: "#d7c2f9" } : {}}
+          style={initialFilter == "Z" ? { backgroundColor: activeColor } : {}}
         >
           首字母-Z
         </Dropdown.Item>

@@ -181,7 +181,7 @@ export default function Home() {
           {/** 头像和标题 */}
           <Row>
             <Col>
-              <div className={styles.centerFlexDiv}>
+              <div className="d-flex justify-content-evenly mt-3">
                 <Image
                   loader={imageLoader}
                   className={styles.avatar}
@@ -197,10 +197,10 @@ export default function Home() {
               <h1 className={"display-6 text-center " + styles.grandTitle}>
                 和她拿手的<b>{filteredSongList.length}</b>首歌
               </h1>
-              <div className={styles.centerFlexDiv}>
+              <div className="d-flex justify-content-evenly">
                 <Link href="https://live.bilibili.com/23777594" passHref>
                   <a target="_blank">
-                    <Button className={"mt-3 " + styles.customRandomButton}>
+                    <Button className={styles.customRandomButton}>
                       <img
                         className={styles.biliIcon}
                         src="/bilibili_logo.png"
@@ -224,7 +224,7 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <p className={"text-center py-3 text-muted"}>
+              <p className="text-center py-3 text-muted">
                 可以点击歌名复制哦
               </p>
             </Col>

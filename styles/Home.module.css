@@ -21,10 +21,13 @@
 
 .outerContainer {
   background-color: rgba(243, 183, 207, 0.5);
+  /* background-color: rgba(209,187,254,0.5); */
+  /* background-color: rgba(245,173,223,1); */
 }
 
 .grandTitle {
   color: #575065;
+  /* color: #643AA1; */
 }
 
 .songListMarco {
@@ -37,12 +40,6 @@
   white-space: nowrap !important;
 }
 
-.centerFlexDiv {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1rem;
-}
-
 .avatar {
   border-radius: 100%;
 }
@@ -52,8 +49,9 @@
   transition: background-color 0.25s ease;
 }
 
-.songRow:hover {
+.songRow:hover, .songRowTop:hover, .songRowPaid:hover {
   background-color: #d7c2f9;
+  /* background-color: rgba(160,145,251,0.8); */
 }
 
 .songRowTop {
@@ -62,18 +60,10 @@
   background-color: rgba(229, 106, 84, 0.1);
 }
 
-.songRowTop:hover {
-  background-color: #d7c2f9;
-}
-
 .songRowPaid {
   cursor: pointer;
   transition: background-color 0.25s ease;
   background-color: rgba(255, 223, 0, 0.1);
-}
-
-.songRowPaid:hover {
-  background-color: #d7c2f9;
 }
 
 .filters {
@@ -90,84 +80,56 @@
 
 .customRandomButton {
   color: #575065;
+  /* color: #643AA1; */
   border-radius: 1rem;
   border: none;
   margin-top: 12px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.customRandomButton:focus {
+.customRandomButton:focus, .customCategoryButton:focus, .mandarinBtn > button:focus {
   color: #575065;
+  /* color: #643AA1; */
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
 
-.customRandomButton:hover {
+.customRandomButton:hover, .customCategoryButton:hover, .mandarinBtn > button:hover {
   color: #575065;
+  /* color: #643AA1; */
   background-color: rgba(255, 255, 255, 1);
 }
 
-.customCategoryButton {
+.customCategoryButton, .mandarinBtn > button {
   color: #575065;
+  /* color: #643AA1; */
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-.customCategoryButton:focus {
-  color: #575065;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: none;
-}
-
-.customCategoryButton:hover {
-  color: #575065;
-  background-color: rgba(255, 255, 255, 1);
 }
 
 .customCategoryButtonActive {
   color: #575065;
+  color: #643AA1;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
   background-color: #d7c2f9;
+  /* background-color: rgba(160,145,251,0.8); */
 }
 
 .customCategoryButtonActive:focus {
   color: #575065;
+  /* color: #643AA1; */
   background-color: #d7c2f9;
+  /* background-color: rgba(160,145,251,0.8); */
   box-shadow: none;
 }
 
 .customCategoryButtonActive:hover {
   color: #575065;
   background-color: #AC9BC7;
-}
-
-.mandarinBtn > button {
-  color: #575065;
-  border-radius: 1rem;
-  margin-bottom: 12px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.mandarinBtn > button:hover {
-  color: #575065;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.mandarinBtn > button:focus {
-  color: #575065;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: none;
-}
-
-.mandarinBtn > button:active {
-  color: #575065;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: none;
 }
 
 .mandarinBtnActive > button {
@@ -178,12 +140,7 @@
   background-color: #d7c2f9;
 }
 
-.mandarinBtnActive > button:hover {
-  color: #575065;
-  background-color: #AC9BC7;
-}
-
-.mandarinBtnActive > button:focus {
+.mandarinBtnActive > button:focus, .mandarinBtnActive > button:hover {
   color: #575065;
   background-color: #AC9BC7;
   box-shadow: none;
@@ -230,6 +187,7 @@
 
 .categorySelectionContainer {
   border: 3px solid #575065;
+  /* border: 3px solid #643AA1; */
   border-radius: 1rem;
   padding: 1rem;
 }
