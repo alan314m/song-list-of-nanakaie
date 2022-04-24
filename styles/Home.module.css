@@ -2,8 +2,8 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #575065;
-  color: #575065;
+  border-top: 1px solid #1D0C26;
+  color: #1D0C26;
   justify-content: center;
   align-items: center;
 }
@@ -20,14 +20,15 @@
 }
 
 .outerContainer {
-  background-color: rgba(243, 183, 207, 0.5);
-  /* background-color: rgba(209,187,254,0.5); */
-  /* background-color: rgba(245,173,223,1); */
+  background: linear-gradient(rgba(226, 213, 229, 0.9), rgba(226, 213, 229, 0.9)), url("/tipsy.jpg") center center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .grandTitle {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
 }
 
 .songListMarco {
@@ -42,6 +43,15 @@
 
 .avatar {
   border-radius: 100%;
+  border: 3px solid #BEA5C1 !important;
+}
+
+.avatarNew {
+  border-radius: 100%;
+  background-image: url('/nanakaie.webp');
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 8px 8px #E2D5E5 inset;
 }
 
 .songRow {
@@ -50,8 +60,7 @@
 }
 
 .songRow:hover, .songRowTop:hover, .songRowPaid:hover {
-  background-color: #d7c2f9;
-  /* background-color: rgba(160,145,251,0.8); */
+  background-color: #CFEBA5;
 }
 
 .songRowTop {
@@ -79,8 +88,7 @@
 }
 
 .customRandomButton {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
   border-radius: 1rem;
   border: none;
   margin-top: 12px;
@@ -88,21 +96,18 @@
 }
 
 .customRandomButton:focus, .customCategoryButton:focus, .mandarinBtn > button:focus {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
 
 .customRandomButton:hover, .customCategoryButton:hover, .mandarinBtn > button:hover {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
   background-color: rgba(255, 255, 255, 1);
 }
 
 .customCategoryButton, .mandarinBtn > button {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
@@ -110,45 +115,41 @@
 }
 
 .customCategoryButtonActive {
-  color: #575065;
-  /* color: #643AA1; */
+  color: #1D0C26;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #d7c2f9;
-  /* background-color: rgba(160,145,251,0.8); */
+  background-color: #BEA5C1;
 }
 
 .customCategoryButtonActive:focus {
-  color: #575065;
-  /* color: #643AA1; */
-  background-color: #d7c2f9;
-  /* background-color: rgba(160,145,251,0.8); */
+  color: #1D0C26;
+  background-color: #BEA5C1;
   box-shadow: none;
 }
 
 .customCategoryButtonActive:hover {
-  color: #575065;
-  background-color: #AC9BC7;
+  color: #1D0C26;
+  background-color: #A083A0;
 }
 
 .mandarinBtnActive > button {
-  color: #575065;
+  color: #1D0C26;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #d7c2f9;
+  background-color: #BEA5C1;
 }
 
 .mandarinBtnActive > button:focus, .mandarinBtnActive > button:hover {
-  color: #575065;
-  background-color: #AC9BC7;
+  color: #1D0C26;
+  background-color: #A083A0;
   box-shadow: none;
 }
 
 .mandarinBtnActive > button:active {
-  color: #575065;
-  background-color: #d7c2f9;
+  color: #1D0C26;
+  background-color: #BEA5C1;
   box-shadow: none;
 }
 
@@ -158,7 +159,7 @@
   right: 2rem;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.5);
-  color: #575065;
+  color: #1D0C26;
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 0.75rem;
@@ -186,8 +187,7 @@
 }
 
 .categorySelectionContainer {
-  border: 3px solid #575065;
-  /* border: 3px solid #643AA1; */
+  border: 3px solid #1D0C26;
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -195,7 +195,7 @@
 .categorySelectionTitle {
   position: relative;
   top: -2rem;
-  background-color: #F9DBE7;
+  background-color: #DFD1E3;
   margin: auto;
   text-align: center;
   width: 215px;

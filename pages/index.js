@@ -161,6 +161,7 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
+      behavior: "smooth",
     });
   };
 
@@ -174,13 +175,24 @@ export default function Home() {
             content="七禾いえ,B站,bilibili,哔哩哔哩,电台唱见,歌单"
           />
           <meta name="description" content="七禾いえ的歌单" />
-          <link rel="icon" href="/favicon.gif" type="image/gif" />
+          {/** <link rel="icon" href="/favicon.gif" type="image/gif" /> */}
+          <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
         </Head>
 
         <section className={styles.main}>
           {/** 头像和标题 */}
           <Row>
             <Col>
+              {/**               <div className="d-flex justify-content-evenly mt-3">
+                <Image
+                  loader={imageLoader}
+                  className={styles.avatar}
+                  src="nanakaie.png"
+                  alt="七宝的头像"
+                  width={250}
+                  height={250}
+                />
+              </div> */}
               <div className="d-flex justify-content-evenly mt-3">
                 <Image
                   loader={imageLoader}
@@ -191,6 +203,9 @@ export default function Home() {
                   height={250}
                 />
               </div>
+              {/**               <div className="d-flex justify-content-evenly mt-3">
+              <div className={styles.avatarNew}></div>
+              </div> */}
               <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
                 七禾いえ
               </h1>
@@ -224,9 +239,7 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <p className="text-center py-3 text-muted">
-                可以点击歌名复制哦
-              </p>
+              <p className="text-center py-3 text-muted">可以点击歌名复制哦</p>
             </Col>
           </Row>
           {/** 过滤器控件 */}
