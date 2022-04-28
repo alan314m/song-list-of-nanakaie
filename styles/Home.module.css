@@ -19,14 +19,6 @@
   min-height: 86vh;
 }
 
-.outerContainer {
-  background: linear-gradient(rgba(226, 213, 229, 0.9), rgba(226, 213, 229, 0.9)), url("/tipsy.jpg") center center no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 .grandTitle {
   color: #1D0C26;
 }
@@ -192,21 +184,38 @@
   padding: 1rem;
 }
 
-.categorySelectionTitle {
-  position: relative;
-  top: -2rem;
-  background-color: #DFD1E3;
-  margin: auto;
-  text-align: center;
-  width: 215px;
-  height: 16px;
+@media (min-width: 1201px) {
+  .outerContainer {
+    background: linear-gradient(rgba(226, 213, 229, 0.85), rgba(226, 213, 229, 0.85)), url("/tipsy.jpg") center center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .categorySelectionTitle {
+    /* background-color: #DFD1E3; */
+    /* background-color: initial; */
+    /* background-color: #000; */
+    margin: auto;
+    text-align: center;
+    width: 215px;
+    margin-bottom: 1rem;
+  }
 }
 
-@media (max-width: 768px) {
-  /* .filters {
-    margin-top: 12px;
+@media (max-width: 1200px) {
+  .categorySelectionTitle {
+    position: relative;
+    top: -2rem;
+    background-color: #DFD1E3;
+    margin: auto;
+    text-align: center;
+    width: 215px;
+    height: 16px;
   }
-  .customRandomButton {
-    margin-top: 12px;
-  } */
+}
+
+.outerContainer {
+  background-color: #DFD1E3;
 }
