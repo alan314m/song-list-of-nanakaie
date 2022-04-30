@@ -2,7 +2,8 @@ module.exports = {
   trailingSlash: true,
   exportPathMap: function () {
     return {
-      '/': {page: "/"}
+      '/': {page: "/"},
+      '/404': {page: "/404"}
     }
   },
   images: {
