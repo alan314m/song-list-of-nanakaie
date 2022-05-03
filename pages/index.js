@@ -15,6 +15,7 @@ import MusicList from "../public/music_list_7.json";
 
 import SongDetail from "../components/SongDetail.component";
 import MandarinBtn from "../components/MandarinBtn.component";
+import ChevronSVG from "../components/ChevronSVG.component";
 
 import imageLoader from "../utils/ImageLoader";
 
@@ -182,18 +183,121 @@ export default function Home() {
         <section className={styles.main}>
           {/** 头像和标题 */}
           <Row>
-            <Col>
-              {/**               <div className="d-flex justify-content-evenly mt-3">
+            <Col className={styles.titleCol}>
+              <div className={"pt-3 " + styles.titleBox}>
                 <Image
                   loader={imageLoader}
                   className={styles.avatar}
-                  src="nanakaie.png"
+                  src="nanakaie.webp"
                   alt="七宝的头像"
                   width={250}
                   height={250}
                 />
-              </div> */}
-              <div className="d-flex justify-content-evenly mt-3">
+                <h1
+                  className={"display-6 text-center pt-3 " + styles.grandTitle}
+                >
+                  七禾いえ
+                </h1>
+                <h1 className={"display-6 text-center " + styles.grandTitle}>
+                  和她拿手的<b>{filteredSongList.length}</b>首歌
+                </h1>
+                <Link href="https://live.bilibili.com/23777594" passHref>
+                  <a target="_blank">
+                    <Button className={styles.customRandomButton}>
+                      <img
+                        className={styles.biliIcon}
+                        src="/bilibili_logo.png"
+                        alt="bilibili logo"
+                      />{" "}
+                      前往七宝的直播间 <ChevronSVG />
+                    </Button>
+                  </a>
+                </Link>
+                <p className="text-center py-3 text-muted">
+                  可以点击歌名复制哦
+                </p>
+              </div>
+              <div className={styles.introBox}>
+                <div className={styles.introBoxInnerDiv}>
+                  <h5 className={styles.introTitle}>七禾的自我介绍</h5>
+                  <p className={styles.introParagraph}>
+                    🐏咩，这里是小羊人七禾，是一只来自咩星的绵羊（羊毛虽好但不要薅七禾的羊毛⊙∀⊙！）
+                    性别女 没有角但有耳朵 身高160cm 生日6月26日
+                  </p>
+                  <p className={styles.introParagraph}>
+                    🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏（血压飙升的那种。
+                    目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。
+                  </p>
+                  <p className={styles.introParagraph}>
+                    🐏本直播间郑重承诺点歌不用戴牌子，只需打米，一个喵娘点唱，sc置顶，上船无限点歌还可以指定学歌噢。个别高能歌曲需要水晶球。
+                  </p>
+                  <p className={styles.introParagraph}>
+                    🐏欢迎大家投递自己生活中有趣的小故事或者苦恼的问题到七羊羊的匿名提问箱，
+                    累积到一定数量会开启提问箱专场ε(*･ω･)_/ﾟ:･☆
+                  </p>
+                  <p className={styles.introParagraph}>
+                    🐏本羊正经的时候超正经，不正经的时候也超不正经，希望新来的朋友可以多来直播间和我一起玩，我们互相了解！我会做你最可爱的小羊，你也会是我最嫩绿可口的那颗草（bushi！
+                  </p>
+                  <div className="d-flex flex-nowrap justify-content-evenly">
+                    <Link
+                      href="https://www.tapechat.net/uu/I5WYEZ/AP42LSVE"
+                      passHref
+                    >
+                      <a target="_blank">
+                        <Button
+                          className={styles.customRandomButton}
+                          style={{ marginTop: 0 }}
+                        >
+                          <img
+                            className={styles.biliIcon}
+                            src="/tapechat.png"
+                            alt="提问箱贴图"
+                          />{" "}
+                          匿名提问箱 <ChevronSVG />
+                        </Button>
+                      </a>
+                    </Link>
+                    <Link
+                      href="https://space.bilibili.com/291405893/dynamic"
+                      passHref
+                    >
+                      <a target="_blank">
+                        <Button
+                          className={styles.customRandomButton}
+                          style={{ marginTop: 0 }}
+                        >
+                          <img
+                            className={styles.biliIcon}
+                            src="/liang_bao.webp"
+                            alt="君为苍凉头像贴图"
+                          />{" "}
+                          录播组（@君为苍凉） <ChevronSVG />
+                        </Button>
+                      </a>
+                    </Link>
+                    <Link
+                      href="https://space.bilibili.com/545589798/dynamic"
+                      passHref
+                    >
+                      <a target="_blank">
+                        <Button
+                          className={styles.customRandomButton}
+                          style={{ marginTop: 0 }}
+                        >
+                          <img
+                            className={styles.biliIcon}
+                            src="/qie_ge.webp"
+                            alt="屑羊羊切片组贴图"
+                            style={{ borderRadius: "100%" }}
+                          />{" "}
+                          切片组 <ChevronSVG />
+                        </Button>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/**               <div className="d-flex justify-content-evenly mt-3">
                 <Image
                   loader={imageLoader}
                   className={styles.avatar}
@@ -203,9 +307,6 @@ export default function Home() {
                   height={250}
                 />
               </div>
-              {/**               <div className="d-flex justify-content-evenly mt-3">
-              <div className={styles.avatarNew}></div>
-              </div> */}
               <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
                 七禾いえ
               </h1>
@@ -239,7 +340,7 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <p className="text-center py-3 text-muted">可以点击歌名复制哦</p>
+              <p className="text-center py-3 text-muted">可以点击歌名复制哦</p> */}
             </Col>
           </Row>
           {/** 过滤器控件 */}

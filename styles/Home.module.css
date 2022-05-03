@@ -194,13 +194,35 @@
   }
 
   .categorySelectionTitle {
-    /* background-color: #DFD1E3; */
-    /* background-color: initial; */
-    /* background-color: #000; */
     margin: auto;
     text-align: center;
     width: 215px;
     margin-bottom: 1rem;
+  }
+
+  .introBox {
+    position: relative;
+    left: 40%;
+    top: -95%;
+    width: 55%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .introBoxInnerDiv {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    border:2px solid #A083A0;
+    padding: 1rem;
+  }
+  
+  .titleCol:hover .introBox {
+    opacity: 1;
+  }
+
+  .titleCol:hover .titleBox {
+    transform: translateX(-30%);
   }
 }
 
@@ -214,8 +236,26 @@
     width: 215px;
     height: 16px;
   }
+
+  .introBox {
+    display: none;
+  }
 }
 
 .outerContainer {
   background-color: #DFD1E3;
+}
+
+.titleBox {
+  text-align: center;
+  transition: transform 1s ease-out;
+}
+
+.introTitle {
+  text-align: center;
+  color:#1D0C26;
+}
+
+.introParagraph {
+  color:#1D0C26;
 }
