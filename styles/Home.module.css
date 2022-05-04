@@ -224,6 +224,14 @@
   .titleCol:hover .titleBox {
     transform: translateX(-30%);
   }
+
+  .offCanvasToggleDiv {
+    display: none;
+  }
+
+  .goToLiveDiv:hover {
+    background-color: rgba(255,255,255,0.5);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -239,6 +247,14 @@
 
   .introBox {
     display: none;
+  }
+
+  .offCanvasToggleDiv {
+    position: absolute;
+    cursor: pointer;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
   }
 }
 
@@ -258,4 +274,19 @@
 
 .introParagraph {
   color:#1D0C26;
+}
+
+.cornerToggle {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.goToLiveDiv {
+  position: absolute;
+  cursor: pointer;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
+  border-radius: 5px;
 }

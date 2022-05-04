@@ -7,7 +7,15 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Container, Row, Col, Form, Table, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Table,
+  Button,
+  Offcanvas,
+} from "react-bootstrap";
 import { toast } from "react-toastify";
 import copy from "copy-to-clipboard";
 
@@ -20,7 +28,7 @@ import ChevronSVG from "../components/ChevronSVG.component";
 import imageLoader from "../utils/ImageLoader";
 
 export default function Home() {
-  //状态保存: 类别选择, 搜索框和回到顶部按钮
+  //状态保存: 类别选择, 搜索框, 回到顶部按钮, 移动端自我介绍
   const [categorySelection, setCategotySelection] = useState({
     lang: "",
     initial: "",
@@ -29,6 +37,7 @@ export default function Home() {
   });
   const [searchBox, setSearchBox] = useState("");
   const [showToTopButton, setToTopShowButton] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
 
   useEffect(() => {
     //检测窗口滚动
@@ -158,6 +167,10 @@ export default function Home() {
     }
   };
 
+  //移动端自我介绍off canvas开关
+  const handleCloseIntro = () => setShowIntro(false);
+  const handleShowIntro = () => setShowIntro(true);
+
   //滚动到顶部
   const scrollToTop = () => {
     window.scrollTo({
@@ -168,6 +181,38 @@ export default function Home() {
 
   return (
     <div className={styles.outerContainer}>
+      <Link href="https://live.bilibili.com/23777594" passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.goToLiveDiv}>
+            <div className={styles.cornerToggle}>
+              <Image
+                loader={imageLoader}
+                src="bilibili_logo_padded.png"
+                alt="打开自我介绍"
+                width={50}
+                height={50}
+              />
+              <b>
+                <i>去直播间</i>
+              </b>
+            </div>
+          </div>
+        </a>
+      </Link>
+      <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
+        <div className={styles.cornerToggle}>
+          <Image
+            loader={imageLoader}
+            src="tiny_nanakaie.webp"
+            alt="打开自我介绍"
+            width={50}
+            height={50}
+          />
+          <b>
+            <i>自我介绍</i>
+          </b>
+        </div>
+      </div>
       <Container>
         <Head>
           <title>七禾いえ的歌单</title>
@@ -176,8 +221,12 @@ export default function Home() {
             content="七禾いえ,B站,bilibili,哔哩哔哩,电台唱见,歌单"
           />
           <meta name="description" content="七禾いえ的歌单" />
-          {/** <link rel="icon" href="/favicon.gif" type="image/gif" /> */}
           <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/custom_icon.png"
+          />
         </Head>
 
         <section className={styles.main}>
@@ -201,19 +250,7 @@ export default function Home() {
                 <h1 className={"display-6 text-center " + styles.grandTitle}>
                   和她拿手的<b>{filteredSongList.length}</b>首歌
                 </h1>
-                <Link href="https://live.bilibili.com/23777594" passHref>
-                  <a target="_blank">
-                    <Button className={styles.customRandomButton}>
-                      <img
-                        className={styles.biliIcon}
-                        src="/bilibili_logo.png"
-                        alt="bilibili logo"
-                      />{" "}
-                      前往七宝的直播间 <ChevronSVG />
-                    </Button>
-                  </a>
-                </Link>
-                <p className="text-center py-3 text-muted">
+                <p className="text-center py-3 mb-xl-5 text-muted">
                   可以点击歌名复制哦
                 </p>
               </div>
@@ -246,7 +283,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0 }}
+                          style={{ marginTop: 0, border: "2px solid #DFD1E3" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -264,7 +301,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0 }}
+                          style={{ marginTop: 0, border: "2px solid #DFD1E3" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -282,7 +319,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0 }}
+                          style={{ marginTop: 0, border: "2px solid #DFD1E3" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -297,50 +334,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/**               <div className="d-flex justify-content-evenly mt-3">
-                <Image
-                  loader={imageLoader}
-                  className={styles.avatar}
-                  src="nanakaie.webp"
-                  alt="七宝的头像"
-                  width={250}
-                  height={250}
-                />
-              </div>
-              <h1 className={"display-6 text-center pt-3 " + styles.grandTitle}>
-                七禾いえ
-              </h1>
-              <h1 className={"display-6 text-center " + styles.grandTitle}>
-                和她拿手的<b>{filteredSongList.length}</b>首歌
-              </h1>
-              <div className="d-flex justify-content-evenly">
-                <Link href="https://live.bilibili.com/23777594" passHref>
-                  <a target="_blank">
-                    <Button className={styles.customRandomButton}>
-                      <img
-                        className={styles.biliIcon}
-                        src="/bilibili_logo.png"
-                        alt="bilibili logo"
-                      />{" "}
-                      前往七宝的直播间{" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        className="bi bi-chevron-right"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                    </Button>
-                  </a>
-                </Link>
-              </div>
-              <p className="text-center py-3 text-muted">可以点击歌名复制哦</p> */}
             </Col>
           </Row>
           {/** 过滤器控件 */}
@@ -577,6 +570,77 @@ export default function Home() {
           Copyright © 2022 七宝和她的家人们
         </footer>
       </Container>
+      <Offcanvas show={showIntro} onHide={handleCloseIntro}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>七禾的自我介绍</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <p className={styles.introParagraph}>
+            🐏咩，这里是小羊人七禾，是一只来自咩星的绵羊（羊毛虽好但不要薅七禾的羊毛⊙∀⊙！）
+            性别女 没有角但有耳朵 身高160cm 生日6月26日
+          </p>
+          <p className={styles.introParagraph}>
+            🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏（血压飙升的那种。
+            目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。
+          </p>
+          <p className={styles.introParagraph}>
+            🐏本直播间郑重承诺点歌不用戴牌子，只需打米，一个喵娘点唱，sc置顶，上船无限点歌还可以指定学歌噢。个别高能歌曲需要水晶球。
+          </p>
+          <p className={styles.introParagraph}>
+            🐏欢迎大家投递自己生活中有趣的小故事或者苦恼的问题到七羊羊的匿名提问箱，
+            累积到一定数量会开启提问箱专场ε(*･ω･)_/ﾟ:･☆
+          </p>
+          <p className={styles.introParagraph}>
+            🐏本羊正经的时候超正经，不正经的时候也超不正经，希望新来的朋友可以多来直播间和我一起玩，我们互相了解！我会做你最可爱的小羊，你也会是我最嫩绿可口的那颗草（bushi！
+          </p>
+          <Link href="https://www.tapechat.net/uu/I5WYEZ/AP42LSVE" passHref>
+            <a target="_blank">
+              <Button
+                className={styles.customRandomButton}
+                style={{ border: "2px solid #1D0C26", width: "100%" }}
+              >
+                <img
+                  className={styles.biliIcon}
+                  src="/tapechat.png"
+                  alt="提问箱贴图"
+                />{" "}
+                匿名提问箱 <ChevronSVG />
+              </Button>
+            </a>
+          </Link>
+          <Link href="https://space.bilibili.com/291405893/dynamic" passHref>
+            <a target="_blank">
+              <Button
+                className={styles.customRandomButton}
+                style={{ border: "2px solid #1D0C26", width: "100%" }}
+              >
+                <img
+                  className={styles.biliIcon}
+                  src="/liang_bao.webp"
+                  alt="君为苍凉头像贴图"
+                />{" "}
+                录播组（@君为苍凉） <ChevronSVG />
+              </Button>
+            </a>
+          </Link>
+          <Link href="https://space.bilibili.com/545589798/dynamic" passHref>
+            <a target="_blank">
+              <Button
+                className={styles.customRandomButton}
+                style={{ border: "2px solid #1D0C26", width: "100%" }}
+              >
+                <img
+                  className={styles.biliIcon}
+                  src="/qie_ge.webp"
+                  alt="屑羊羊切片组贴图"
+                  style={{ borderRadius: "100%" }}
+                />{" "}
+                切片组 <ChevronSVG />
+              </Button>
+            </a>
+          </Link>
+        </Offcanvas.Body>
+      </Offcanvas>
     </div>
   );
 }
