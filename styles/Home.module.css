@@ -186,7 +186,7 @@
 
 @media (min-width: 1201px) {
   .outerContainer {
-    background: linear-gradient(rgba(226, 213, 229, 0.85), rgba(226, 213, 229, 0.85)), url("/tipsy.jpg") center center no-repeat fixed;
+    background: url("/tipsy.webp") center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
