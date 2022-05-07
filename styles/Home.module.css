@@ -270,7 +270,8 @@
 }
 
 .introTitle {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
   color:#1D0C26;
 }
 

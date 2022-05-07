@@ -260,7 +260,39 @@ export default function Home() {
               </div>
               <div className={styles.introBox}>
                 <div className={styles.introBoxInnerDiv}>
-                  <h5 className={styles.introTitle}>七禾的自我介绍</h5>
+                  <div className={styles.introTitle}>
+                    <h5>七禾的自我介绍</h5>
+                    <div className="d-flex">
+                      <Link
+                        href="https://music.163.com/#/user?id=383239879"
+                        passHref
+                      >
+                        <a target="_blank" style={{ marginRight: "1rem" }} title="七禾的网易云音乐主页">
+                          <Image
+                            loader={imageLoader}
+                            src="163music.ico"
+                            alt="七禾的网易云音乐主页链接"
+                            width={24}
+                            height={24}
+                          />
+                        </a>
+                      </Link>
+                      <Link
+                        href="https://y.qq.com/n/ryqq/singer/003XSaZ01pyD8x"
+                        passHref
+                      >
+                        <a target="_blank" title="七禾的QQ音乐主页">
+                          <Image
+                            loader={imageLoader}
+                            src="qqmusic.ico"
+                            alt="七禾的QQ音乐主页链接"
+                            width={24}
+                            height={24}
+                          />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
                   <p className={styles.introParagraph}>
                     🐏咩，这里是小羊人七禾，是一只来自咩星的绵羊（羊毛虽好但不要薅七禾的羊毛⊙∀⊙！）
                     性别女 没有角但有耳朵 身高160cm 生日6月26日
@@ -645,6 +677,40 @@ export default function Home() {
                   style={{ borderRadius: "100%" }}
                 />{" "}
                 切片组 <ChevronSVG />
+              </Button>
+            </a>
+          </Link>
+
+          <Link href="https://music.163.com/m/user?id=383239879" passHref>
+            <a target="_blank">
+              <Button
+                className={styles.customRandomButton}
+                style={{ border: "2px solid #1D0C26", width: "100%" }}
+              >
+                <img
+                  className={styles.biliIcon}
+                  src="/163music.ico"
+                  alt="网易云组贴图"
+                />{" "}
+                七禾的网易云主页 <ChevronSVG />
+              </Button>
+            </a>
+          </Link>
+          <Link
+            href="https://i.y.qq.com/n2/m/share/profile_v2/index.html?ADTAG=ryqq.singer&source=ydetail&singermid=003XSaZ01pyD8x"
+            passHref
+          >
+            <a target="_blank">
+              <Button
+                className={styles.customRandomButton}
+                style={{ border: "2px solid #1D0C26", width: "100%" }}
+              >
+                <img
+                  className={styles.biliIcon}
+                  src="/qqmusic.ico"
+                  alt="QQ音乐贴图"
+                />{" "}
+                七禾的QQ音乐主页 <ChevronSVG />
               </Button>
             </a>
           </Link>
