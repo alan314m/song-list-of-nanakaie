@@ -24,11 +24,12 @@ import MusicList from "../public/music_list_7.json";
 import SongDetail from "../components/SongDetail.component";
 import MandarinBtn from "../components/MandarinBtn.component";
 import ChevronSVG from "../components/ChevronSVG.component";
+import BiliPlayerModal from "../components/BiliPlayerModal.component";
 
 import imageLoader from "../utils/ImageLoader";
 
 export default function Home() {
-  //状态保存: 类别选择, 搜索框, 回到顶部按钮, 移动端自我介绍
+  //状态保存: 类别选择, 搜索框, 回到顶部按钮, 移动端自我介绍, 试听窗口
   const [categorySelection, setCategotySelection] = useState({
     lang: "",
     initial: "",
@@ -38,6 +39,9 @@ export default function Home() {
   const [searchBox, setSearchBox] = useState("");
   const [showToTopButton, setToTopShowButton] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  const [modalPlayerShow, setPlayerModalShow] = useState(false);
+  const [modalPlayerSongName, setPlayerModalSongName] = useState("");
+  const [BVID, setBVID] = useState("");
 
   useEffect(() => {
     //检测窗口滚动
@@ -508,6 +512,7 @@ export default function Home() {
             <Col xs={12} md={3}>
               <div className="d-grid">
                 <Button
+                  title="从下面的歌单里随机挑一首"
                   className={styles.customRandomButton}
                   onClick={handleRandomSong}
                 >
@@ -526,6 +531,7 @@ export default function Home() {
                       <tr>
                         <th></th>
                         <th>歌名</th>
+                        <th></th>
                         <th>歌手</th>
                         <th>语言</th>
                         <th>备注</th>
@@ -535,6 +541,9 @@ export default function Home() {
                       <SongDetail
                         filteredSongList={filteredSongList}
                         handleClickToCopy={handleClickToCopy}
+                        setBVID={setBVID}
+                        setPlayerModalShow={setPlayerModalShow}
+                        setPlayerModalSongName={setPlayerModalSongName}
                       />
                     </tbody>
                   </Table>
@@ -641,6 +650,12 @@ export default function Home() {
           </Link>
         </Offcanvas.Body>
       </Offcanvas>
+      <BiliPlayerModal
+        show={modalPlayerShow}
+        onHide={() => setPlayerModalShow(false)}
+        BVID={BVID}
+        modalPlayerSongName={modalPlayerSongName}
+      />
     </div>
   );
 }
