@@ -9,7 +9,7 @@ export default function BiliPlayerModal({
   modalPlayerSongName,
 }) {
   return (
-    <Modal show={show} onHide={onHide} fullscreen="xl-down" size="lg" centered>
+    <Modal show={show} onHide={onHide} fullscreen="xl-down" size="xl" centered>
       <Modal.Header closeButton>
         <Modal.Title>{modalPlayerSongName}</Modal.Title>
       </Modal.Header>
