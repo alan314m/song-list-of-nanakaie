@@ -267,7 +267,14 @@ export default function Home() {
                         href="https://music.163.com/#/user?id=383239879"
                         passHref
                       >
-                        <a target="_blank" style={{ marginRight: "1rem" }} title="七禾的网易云音乐主页">
+                        <a
+                          target="_blank"
+                          style={{
+                            marginRight: "1rem",
+                            cursor: 'url("/cursor_pointer.png"), pointer',
+                          }}
+                          title="七禾的网易云音乐主页"
+                        >
                           <Image
                             loader={imageLoader}
                             src="163music.ico"
@@ -281,7 +288,13 @@ export default function Home() {
                         href="https://y.qq.com/n/ryqq/singer/003XSaZ01pyD8x"
                         passHref
                       >
-                        <a target="_blank" title="七禾的QQ音乐主页">
+                        <a
+                          target="_blank"
+                          style={{
+                            cursor: 'url("/cursor_pointer.png"), pointer',
+                          }}
+                          title="七禾的QQ音乐主页"
+                        >
                           <Image
                             loader={imageLoader}
                             src="qqmusic.ico"
