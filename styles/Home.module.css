@@ -164,6 +164,7 @@
 
 .backToTopBtn:hover {
   background-color: white;
+  cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .tableIconTd {
