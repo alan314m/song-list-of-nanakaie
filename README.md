@@ -1,18 +1,18 @@
 # 七宝的歌单
 
-新手随便做做来练手，请多包涵
+随便做做来练手，请多包涵
 
 <br />
 
-## 前端咋跑？
+## 运行项目前端
 
 此项目使用Next.JS(一个基于React.JS的前端框架)撰写。如果运行环境没有Node.JS，请先下载[Node.JS](https://nodejs.org)
 
 <br />
 
-### 开发环境
+### 启动开发环境
 
-一直用的npm, 不确定yarn是否还好使。跑开发服务器使用如下指令：
+启动开发服务器请使用如下指令：
 
 ```bash
 npm install
@@ -32,6 +32,10 @@ yarn dev
 ```bash
 npm run build
 npm run export
+
+or
+
+npm run buildssg
 ```
 
 Next.JS自动生成的"out"文件夹可直接用于部署静态网页
