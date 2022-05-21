@@ -33,7 +33,7 @@ yarn dev
 npm run build
 npm run export
 
-or
+# or
 
 npm run buildssg
 ```
