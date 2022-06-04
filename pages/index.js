@@ -255,7 +255,7 @@ export default function Home() {
                   和她拿手的<b>{filteredSongList.length}</b>首歌
                 </h1>
                 <p className="text-center py-3 mb-xl-5 text-muted">
-                  可以点击歌名复制哦
+                  轻点歌名可以复制哦
                 </p>
               </div>
               <div className={styles.introBox}>
