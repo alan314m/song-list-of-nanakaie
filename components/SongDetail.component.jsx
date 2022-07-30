@@ -1,3 +1,5 @@
+import { useDeferredValue } from "react";
+
 import styles from "../styles/Home.module.css";
 
 import { Button } from "react-bootstrap";
@@ -9,8 +11,10 @@ export default function SongDetail({
   setPlayerModalShow,
   setPlayerModalSongName,
 }) {
+  const deferredFilteredSongList = useDeferredValue(filteredSongList);
+
   return filteredSongList.length !== 0 ? (
-    filteredSongList.map((song) => (
+    deferredFilteredSongList.map((song) => (
       <tr
         className={
           song.paid

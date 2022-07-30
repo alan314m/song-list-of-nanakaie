@@ -16,8 +16,8 @@ export default function MandarinBtn({
         title="国语"
         className={
           languageFilter == "国语"
-            ? styles.mandarinBtnActive
-            : styles.mandarinBtn
+            ? styles.splitBtnActive
+            : styles.splitBtn
         }
         onClick={(e) => {
           languageFilter == "国语"

@@ -23,6 +23,7 @@ import MusicList from "../public/music_list_7.json";
 
 import SongDetail from "../components/SongDetail.component";
 import MandarinBtn from "../components/MandarinBtn.component";
+import PianoBtn from "../components/PianoBtn";
 import ChevronSVG from "../components/ChevronSVG.component";
 import BiliPlayerModal from "../components/BiliPlayerModal.component";
 
@@ -487,20 +488,27 @@ export default function Home() {
                     </Col>
                     <Col xs={6} md={3}>
                       <div className="d-grid">
-                        <Button
+
+                      {/** 
+                                            <Button
                           className={
-                            categorySelection.remark == "弹唱"
+                            categorySelection.remark == "钢琴"
                               ? styles.customCategoryButtonActive
                               : styles.customCategoryButton
                           }
                           onClick={(e) => {
-                            categorySelection.remark == "弹唱"
+                            categorySelection.remark == "钢琴"
                               ? setRemarkState("")
-                              : setRemarkState("弹唱");
+                              : setRemarkState("钢琴");
                           }}
                         >
-                          钢琴弹唱
+                          钢琴
                         </Button>
+                    */}
+                        <PianoBtn
+                        remarkFilter={categorySelection.remark}
+                        setRemarkState={setRemarkState}
+                      />
                       </div>
                     </Col>
                     <Col xs={6} md={3}>

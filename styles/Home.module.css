@@ -85,7 +85,7 @@
 
 .customRandomButton:focus,
 .customCategoryButton:focus,
-.mandarinBtn > button:focus {
+.splitBtn > button:focus {
   color: #1d0c26;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
@@ -94,14 +94,14 @@
 
 .customRandomButton:hover,
 .customCategoryButton:hover,
-.mandarinBtn > button:hover {
+.splitBtn > button:hover {
   color: #1d0c26;
   background-color: rgba(255, 255, 255, 1);
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButton,
-.mandarinBtn > button {
+.splitBtn > button {
   color: #1d0c26;
   border-radius: 1rem;
   margin-bottom: 12px;
@@ -132,7 +132,7 @@
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
-.mandarinBtnActive > button {
+.splitBtnActive > button {
   color: #1d0c26;
   border-radius: 1rem;
   margin-bottom: 12px;
@@ -141,15 +141,15 @@
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
-.mandarinBtnActive > button:focus,
-.mandarinBtnActive > button:hover {
+.splitBtnActive > button:focus,
+.splitBtnActive > button:hover {
   color: #1d0c26;
   background-color: #a083a0;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
-.mandarinBtnActive > button:active {
+.splitBtnActive > button:active {
   color: #1d0c26;
   background-color: #bea5c1;
   box-shadow: none;
