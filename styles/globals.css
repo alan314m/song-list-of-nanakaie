@@ -73,3 +73,7 @@ a {
 .offcanvas-header {
   padding-top: calc(env(safe-area-inset-top) + 1rem) !important;
 }
+
+.modal-header {
+  padding-top: calc(env(safe-area-inset-top) + 1rem) !important;
+}
