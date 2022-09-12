@@ -273,6 +273,8 @@
 
 .outerContainer {
   background-color: #dfd1e3;
+  position: relative;
+  margin-top: env(safe-area-inset-top, 0px);
 }
 
 .titleBox {

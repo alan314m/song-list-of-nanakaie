@@ -64,3 +64,12 @@ a {
   border-color: transparent transparent transparent #1D0C26;
 }
 
+@media (max-width: 480px) {
+  .Toastify__toast:first-child {
+    padding-top: env(safe-area-inset-top, 8px) !important;
+  }  
+}
+
+.offcanvas-header {
+  padding-top: calc(env(safe-area-inset-top) + 1rem) !important;
+}

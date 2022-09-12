@@ -32,6 +32,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <script dangerouslySetInnerHTML={getAnalyticsTag()} />
+        <meta name='viewport' content='initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
       </Head>
       <Component {...pageProps} />
       <ToastContainer
