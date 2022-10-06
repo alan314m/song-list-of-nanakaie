@@ -14,26 +14,27 @@ function MyApp({ Component, pageProps }) {
     }catch (e){}
   })
 
-  const getAnalyticsTag = () => {
-    return {
-      __html: `
-      var _hmt = _hmt || [];
-      // (function() {
-      //   var hm = document.createElement("script");
-      //   hm.src = "https://hm.baidu.com/hm.js?5ed1ab746e3a8444d6e1f92b1905cfcb";
-      //   var s = document.getElementsByTagName("script")[0]; 
-      //   s.parentNode.insertBefore(hm, s);
-      // })();
-      `,
-    };
-  };
+  // const getAnalyticsTag = () => {
+  //   return {
+  //     __html: `
+  //     var _hmt = _hmt || [];
+  //     (function() {
+  //       var hm = document.createElement("script");
+  //       hm.src = "https://hm.baidu.com/hm.js?5ed1ab746e3a8444d6e1f92b1905cfcb";
+  //       var s = document.getElementsByTagName("script")[0]; 
+  //       s.parentNode.insertBefore(hm, s);
+  //     })();
+  //     `,
+  //   };
+  // };
 
   return (
     <>
       <Head>
-        <script dangerouslySetInnerHTML={getAnalyticsTag()} />
+        {/** <script dangerouslySetInnerHTML={getAnalyticsTag()} /> */}
         <meta name='viewport' content='initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
       </Head>
+      {/** <div style={{ textAlign: 'center', padding: '10px'}}>测试环境, 请尽量使用二级域名<Link href="https://www.7he.live" passHref><a target="_blank">https://7he.live</a></Link>访问, 谢谢!</div> */}
       <Component {...pageProps} />
       <ToastContainer
         theme="light"
