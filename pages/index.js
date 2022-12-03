@@ -228,7 +228,7 @@ export default function Home() {
           />
           <meta name="description" content="七禾いえ的歌单" />
 
-          <meta name="theme-color" content="#1d0c26" />
+          <meta name="theme-color" content="#151516" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -252,7 +252,7 @@ export default function Home() {
           <link rel="icon" type="image/png" sizes="96x96" href="/a2hs/favicon-96x96.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/a2hs/favicon-16x16.png" />
           <link rel="manifest" href="/a2hs/manifest.json" />
-          <meta name="msapplication-TileColor" content="#DFD1E3" />
+          <meta name="msapplication-TileColor" content="#bfc99a" />
           <meta name="msapplication-TileImage" content="/a2hs/ms-icon-144x144.png" />
 
           <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="splash_screens/iPhone_14_Pro_Max_landscape.png" />

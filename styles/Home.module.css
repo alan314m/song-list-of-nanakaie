@@ -260,7 +260,7 @@
   .categorySelectionTitle {
     position: relative;
     top: -2rem;
-    background-color: #BFC99A;
+    background-color: #C8D1AB;
     margin: auto;
     text-align: center;
     width: 215px;
@@ -278,7 +278,7 @@
 }
 
 .outerContainer {
-  background-color: #BFC99A;
+  background-color: #C8D1AB;
   position: relative;
   margin-top: env(safe-area-inset-top, 0px);
 }
