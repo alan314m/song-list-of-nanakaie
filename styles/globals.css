@@ -2,7 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #DFD1E3;
+  /* background-color: #DFD1E3; */
+  background-color: #C8D1AB;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
@@ -20,7 +21,7 @@ a {
 
 .dropdown-toggle[aria-expanded="true"] {
   background:#FFF !important;
-  color: #1D0C26 !important;
+  color: #151516 !important;
 }
 
 /* Scroll Bar Specific*/
@@ -30,7 +31,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1D0C26;
+  background-color: #151516;
   border-radius: 1rem;
 }
 
@@ -46,22 +47,22 @@ a {
 /* Up Arrow */
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
   border-width: 0 5px 5px 5px;
-  border-color: transparent transparent #1D0C26 transparent;
+  border-color: transparent transparent #151516 transparent;
 }
 /* Down Arrow */
 ::-webkit-scrollbar-button:single-button:vertical:increment {
   border-width: 5px 5px 0 5px;
-  border-color: #1D0C26 transparent transparent transparent;
+  border-color: #151516 transparent transparent transparent;
 }
 /* Left Arrow */
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
   border-width: 5px 5px 5px 0;
-  border-color: transparent #1D0C26 transparent transparent;
+  border-color: transparent #151516 transparent transparent;
 }
 /* Right Arrow */
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
   border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent #1D0C26;
+  border-color: transparent transparent transparent #151516;
 }
 
 @media (max-width: 480px) {

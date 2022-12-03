@@ -9,7 +9,7 @@ export default function MandarinBtn({
   setInitialState,
 }) {
   // const activeColor = "#d7c2f9";
-  const activeColor = "#BEA5C1";
+  const activeColor = "#BFC99A";
   return (
     <div className="d-grid">
       <SplitButton

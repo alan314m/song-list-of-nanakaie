@@ -2,8 +2,8 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #1d0c26;
-  color: #1d0c26;
+  border-top: 1px solid #151516;
+  color: #151516;
   justify-content: center;
   align-items: center;
 }
@@ -20,7 +20,7 @@
 }
 
 .grandTitle {
-  color: #1d0c26;
+  color: #151516;
 }
 
 .songListMarco {
@@ -35,7 +35,7 @@
 
 .avatar {
   border-radius: 100%;
-  border: 3px solid #bea5c1 !important;
+  border: 3px solid #7E8F65 !important;
 }
 
 .songRow {
@@ -46,7 +46,7 @@
 .songRow:hover,
 .songRowTop:hover,
 .songRowPaid:hover {
-  background-color: #cfeba5;
+  background-color: #EBCB8B;
 }
 
 .songRowTop {
@@ -58,7 +58,7 @@
 .songRowPaid {
   cursor: url("/cursor_pointer.png"), pointer;
   transition: background-color 0.25s ease;
-  background-color: rgba(255, 223, 0, 0.1);
+  background-color: rgba(255, 223, 0, 0.2);
 }
 
 .filters {
@@ -75,7 +75,7 @@
 }
 
 .customRandomButton {
-  color: #1d0c26;
+  color: #151516;
   border-radius: 1rem;
   border: none;
   margin-top: 12px;
@@ -86,7 +86,7 @@
 .customRandomButton:focus,
 .customCategoryButton:focus,
 .splitBtn > button:focus {
-  color: #1d0c26;
+  color: #151516;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
@@ -95,14 +95,14 @@
 .customRandomButton:hover,
 .customCategoryButton:hover,
 .splitBtn > button:hover {
-  color: #1d0c26;
+  color: #151516;
   background-color: rgba(255, 255, 255, 1);
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButton,
 .splitBtn > button {
-  color: #1d0c26;
+  color: #151516;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
@@ -111,47 +111,53 @@
 }
 
 .customCategoryButtonActive {
-  color: #1d0c26;
+  color: #151516;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #bea5c1;
+  background-color: #7E8F65;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButtonActive:focus {
-  color: #1d0c26;
-  background-color: #bea5c1;
+  color: #151516;
+  background-color: #7E8F65;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButtonActive:hover {
-  color: #1d0c26;
-  background-color: #a083a0;
+  color: #151516;
+  background-color: #65754d;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button {
-  color: #1d0c26;
+  color: #151516;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #bea5c1;
+  background-color: #7E8F65;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
-.splitBtnActive > button:focus,
+.splitBtnActive > button:focus {
+  color: #151516;
+  background-color: #65754d;
+  box-shadow: none;
+  cursor: url("/cursor_pointer.png"), pointer;
+}
+
 .splitBtnActive > button:hover {
-  color: #1d0c26;
-  background-color: #a083a0;
+  color: #151516;
+  background-color: #65754d;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:active {
-  color: #1d0c26;
-  background-color: #bea5c1;
+  color: #151516;
+  background-color: #65754d;
   box-shadow: none;
 }
 
@@ -161,7 +167,7 @@
   right: 2rem;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.5);
-  color: #1d0c26;
+  color: #151516;
   cursor: url("/cursor_pointer.png"), pointer;
   border-radius: 0.5rem;
   padding: 0.75rem;
@@ -190,14 +196,14 @@
 }
 
 .categorySelectionContainer {
-  border: 3px solid #1d0c26;
+  border: 3px solid #151516;
   border-radius: 1rem;
   padding: 1rem;
 }
 
 @media (min-width: 1201px) {
   .outerContainer {
-    background: url("/tipsy.webp") center center no-repeat fixed;
+    background: url("/background.png") center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -224,7 +230,7 @@
     position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
-    border: 2px solid #a083a0;
+    border: 2px solid #7E8F65;
     padding: 1rem;
   }
 
@@ -254,7 +260,7 @@
   .categorySelectionTitle {
     position: relative;
     top: -2rem;
-    background-color: #dfd1e3;
+    background-color: #BFC99A;
     margin: auto;
     text-align: center;
     width: 215px;
@@ -272,7 +278,7 @@
 }
 
 .outerContainer {
-  background-color: #dfd1e3;
+  background-color: #BFC99A;
   position: relative;
   margin-top: env(safe-area-inset-top, 0px);
 }
@@ -285,11 +291,11 @@
 .introTitle {
   display: flex;
   justify-content: space-between;
-  color: #1d0c26;
+  color: #151516;
 }
 
 .introParagraph {
-  color: #1d0c26;
+  color: #151516;
 }
 
 .cornerToggle {
