@@ -111,7 +111,7 @@
 }
 
 .customCategoryButtonActive {
-  color: #151516;
+  color: #eee;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
@@ -120,20 +120,20 @@
 }
 
 .customCategoryButtonActive:focus {
-  color: #151516;
+  color: #eee;
   background-color: #7E8F65;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButtonActive:hover {
-  color: #151516;
+  color: #eee;
   background-color: #65754d;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button {
-  color: #151516;
+  color: #eee;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
@@ -142,21 +142,21 @@
 }
 
 .splitBtnActive > button:focus {
-  color: #151516;
+  color: #eee;
   background-color: #65754d;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:hover {
-  color: #151516;
+  color: #eee;
   background-color: #65754d;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:active {
-  color: #151516;
+  color: #eee;
   background-color: #65754d;
   box-shadow: none;
 }

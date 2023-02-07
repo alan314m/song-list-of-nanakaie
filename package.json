@@ -1,6 +1,6 @@
 {
   "name": "song_list_of_nanakaie",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
