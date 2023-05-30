@@ -635,7 +635,7 @@ export default function Home() {
           <Row>
             <Col>
               <div className={styles.songListMarco}>
-                <Container fluid>
+                <Container fluid style={{padding: 0}}>
                   <Table responsive>
                     <thead>
                       <tr>

@@ -39,6 +39,7 @@ export default function SongDetail({
               alt="置顶"
               className={styles.tableIcons}
               title="置顶曲目"
+              style={{marginLeft: "0.5rem"}}
             ></img>
           ) : (
             <div></div>
@@ -49,6 +50,7 @@ export default function SongDetail({
               alt="付费"
               className={styles.tableIcons}
               title="付费曲目(水晶球点唱)"
+              style={{marginLeft: "0.5rem"}}
             ></img>
           ) : (
             <div></div>
