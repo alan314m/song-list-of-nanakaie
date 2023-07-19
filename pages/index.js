@@ -206,13 +206,15 @@ export default function Home() {
       </Link>
       <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
         <div className={styles.cornerToggle}>
-          <Image
+          <div style={{ borderRadius: "100% !important" }}>
+            <Image
             loader={imageLoader}
             src="tiny_nanakaie.webp"
             alt="打开自我介绍"
             width={50}
             height={50}
-          />
+            />
+          </div>
           <b>
             <i>自我介绍</i>
           </b>
@@ -369,8 +371,9 @@ export default function Home() {
                     性别女 没有角但有耳朵 身高160cm 生日6月26日
                   </p>
                   <p className={styles.introParagraph}>
-                    🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏（血压飙升的那种。
-                    目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。
+                    🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏
+                    {/** （血压飙升的那种。目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。 */}
+                    
                   </p>
                   <p className={styles.introParagraph}>
                     🐏本直播间郑重承诺点歌不用戴牌子，只需打米，一个喵娘点唱，sc置顶，上船无限点歌还可以指定学歌噢。个别高能歌曲需要水晶球。
@@ -390,7 +393,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0, border: "2px solid #7E8F65" }}
+                          style={{ marginTop: 0, border: "2px solid #B4A96D" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -408,7 +411,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0, border: "2px solid #7E8F65" }}
+                          style={{ marginTop: 0, border: "2px solid #B4A96D" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -426,7 +429,7 @@ export default function Home() {
                       <a target="_blank">
                         <Button
                           className={styles.customRandomButton}
-                          style={{ marginTop: 0, border: "2px solid #7E8F65" }}
+                          style={{ marginTop: 0, border: "2px solid #B4A96D" }}
                         >
                           <img
                             className={styles.biliIcon}
@@ -686,7 +689,7 @@ export default function Home() {
           <div></div>
         )}
         <footer className={styles.footer}>
-          Copyright © 2022 七宝和她的家人们
+          Copyright © 2022-2023 七宝和她的家人们
         </footer>
       </Container>
       <Offcanvas show={showIntro} onHide={handleCloseIntro}>
@@ -699,8 +702,8 @@ export default function Home() {
             性别女 没有角但有耳朵 身高160cm 生日6月26日
           </p>
           <p className={styles.introParagraph}>
-            🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏（血压飙升的那种。
-            目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。
+            🐏直播内容主打吹拉弹唱（吹水·拉胯·弹钢琴·唱歌），歌曲语言包括中日英粤韩。偶尔偶尔打打游戏
+            {/** （血压飙升的那种。目前直播时间是工作日早上9.40晚上20.40和周末早上10.40晚上21.00。 */}
           </p>
           <p className={styles.introParagraph}>
             🐏本直播间郑重承诺点歌不用戴牌子，只需打米，一个喵娘点唱，sc置顶，上船无限点歌还可以指定学歌噢。个别高能歌曲需要水晶球。

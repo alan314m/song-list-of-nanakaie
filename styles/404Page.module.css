@@ -39,8 +39,14 @@
 
 .avatar {
     background-image: url('/what_is_this.png');
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-    box-shadow: 0 0 12px 12px white inset;
+    width: 162px;
+    height: 162px;
+    /* border-radius: 100%; */
+    /* box-shadow: 0 0 12px 12px white inset; */
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

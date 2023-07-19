@@ -9,7 +9,7 @@ export default function Custom404() {
         <title>404 Not Found</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-      <div>
+      <div className={styles.mainDiv}>
         <div className={styles.avatar}></div>
         <h1 className="display-6 my-3" style={{ color: "#1D0C26" }}>
           咩咩人不见惹！

@@ -35,7 +35,7 @@
 
 .avatar {
   border-radius: 100%;
-  border: 3px solid #7E8F65 !important;
+  border: 3px solid #463D30 !important;
 }
 
 .songRow {
@@ -46,7 +46,7 @@
 .songRow:hover,
 .songRowTop:hover,
 .songRowPaid:hover {
-  background-color: #EBCB8B;
+  background-color: #AEA24F77;
 }
 
 .songRowTop {
@@ -111,53 +111,46 @@
 }
 
 .customCategoryButtonActive {
-  color: #eee;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #7E8F65;
+  background-color: #8c8248aa;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButtonActive:focus {
-  color: #eee;
-  background-color: #7E8F65;
+  background-color: #8c8248aa;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .customCategoryButtonActive:hover {
-  color: #eee;
-  background-color: #65754d;
+  background-color: #8c8248aa;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button {
-  color: #eee;
   border-radius: 1rem;
   margin-bottom: 12px;
   border: none;
-  background-color: #7E8F65;
+  background-color: #8c8248aa;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:focus {
-  color: #eee;
-  background-color: #65754d;
+  background-color: #8c8248aa;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:hover {
-  color: #eee;
-  background-color: #65754d;
+  background-color: #8c8248aa;
   box-shadow: none;
   cursor: url("/cursor_pointer.png"), pointer;
 }
 
 .splitBtnActive > button:active {
-  color: #eee;
-  background-color: #65754d;
+  background-color: #8c8248aa;
   box-shadow: none;
 }
 
@@ -230,7 +223,7 @@
     position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
-    border: 2px solid #7E8F65;
+    border: 2px solid #B4A96D;
     padding: 1rem;
   }
 
@@ -260,7 +253,7 @@
   .categorySelectionTitle {
     position: relative;
     top: -2rem;
-    background-color: #C8D1AB;
+    background-color: #cec3a0;
     margin: auto;
     text-align: center;
     width: 215px;
@@ -278,7 +271,7 @@
 }
 
 .outerContainer {
-  background-color: #C8D1AB;
+  background-color: #cec3a0 ;
   position: relative;
   margin-top: env(safe-area-inset-top, 0px);
 }
