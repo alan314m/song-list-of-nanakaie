@@ -405,23 +405,23 @@ export default function Home() {
                       </a>
                     </Link>
                     <Link
-                      href="https://space.bilibili.com/291405893/dynamic"
-                      passHref
-                    >
-                      <a target="_blank">
-                        <Button
-                          className={styles.customRandomButton}
-                          style={{ marginTop: 0, border: "2px solid #B4A96D" }}
-                        >
-                          <img
-                            className={styles.biliIcon}
-                            src="/liang_bao.webp"
-                            alt="君为苍凉头像贴图"
-                          />{" "}
-                          录播组（@君为苍凉） <ChevronSVG />
-                        </Button>
-                      </a>
-                    </Link>
+                    href="https://space.bilibili.com/7011134/dynamic"
+                    passHref
+                  >
+                    <a target="_blank">
+                      <Button
+                        className={styles.customRandomButton}
+                        style={{ marginTop: 0, border: "2px solid #B4A96D" }}
+                      >
+                        <img
+                          className={styles.biliIcon}
+                          src="/gui_shang.webp"
+                          alt="鬼上いえ头像贴图"
+                        />{" "}
+                        歌切（@鬼上いえ） <ChevronSVG />
+                      </Button>
+                    </a>
+                  </Link>
                     <Link
                       href="https://space.bilibili.com/545589798/dynamic"
                       passHref
@@ -730,7 +730,7 @@ export default function Home() {
               </Button>
             </a>
           </Link>
-          <Link href="https://space.bilibili.com/291405893/dynamic" passHref>
+          <Link href="https://space.bilibili.com/7011134/dynamic" passHref>
             <a target="_blank">
               <Button
                 className={styles.customRandomButton}
@@ -738,10 +738,10 @@ export default function Home() {
               >
                 <img
                   className={styles.biliIcon}
-                  src="/liang_bao.webp"
-                  alt="君为苍凉头像贴图"
+                  src="/gui_shang.webp"
+                  alt="鬼上いえ头像贴图"
                 />{" "}
-                录播组（@君为苍凉） <ChevronSVG />
+                录播组（@鬼上いえ） <ChevronSVG />
               </Button>
             </a>
           </Link>
