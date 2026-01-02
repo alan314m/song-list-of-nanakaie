@@ -34,7 +34,7 @@ def updateSongList():
 
 
 def parseSonglist():
-    song_df = pd.read_excel('./music_list_7.xlsx')
+    song_df = pd.read_excel('./歌单整理七禾.xlsx')
     song_df = song_df.where(pd.notnull(song_df), None)
     song_list.clear()
     for index, row in song_df.iterrows():
